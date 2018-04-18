@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Css布局 | Sofia&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一侧定宽的两栏自适应布局——float1234567891011/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/HTML&amp;lt;div class=&amp;quot;twoColLayout&amp;quot;&amp;gt;  &amp;lt;img src=&amp;quot;1.jpg&amp;quot;&amp;gt;  &amp;lt;p&amp;gt;一段文字,...&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;/*margin具有流体特">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Css布局">
+<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/布局/index.html">
+<meta property="og:site_name" content="Sofia&#39;s Blog">
+<meta property="og:description" content="一侧定宽的两栏自适应布局——float1234567891011/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/HTML&amp;lt;div class=&amp;quot;twoColLayout&amp;quot;&amp;gt;  &amp;lt;img src=&amp;quot;1.jpg&amp;quot;&amp;gt;  &amp;lt;p&amp;gt;一段文字,...&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;/*margin具有流体特">
+<meta property="og:locale" content="ZH">
+<meta property="og:updated_time" content="2018-04-18T13:31:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Css布局">
+<meta name="twitter:description" content="一侧定宽的两栏自适应布局——float1234567891011/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/HTML&amp;lt;div class=&amp;quot;twoColLayout&amp;quot;&amp;gt;  &amp;lt;img src=&amp;quot;1.jpg&amp;quot;&amp;gt;  &amp;lt;p&amp;gt;一段文字,...&amp;lt;/p&amp;gt;&amp;lt;/div&amp;gt;/*margin具有流体特">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Sofia&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Sofia&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sofiaying.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/04/18/布局/" class="article-date">
+  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Css布局
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一侧定宽的两栏自适应布局——float"><a href="#一侧定宽的两栏自适应布局——float" class="headerlink" title="一侧定宽的两栏自适应布局——float"></a>一侧定宽的两栏自适应布局——float</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/</span><br><span class="line">HTML</span><br><span class="line">&lt;div class=&quot;twoColLayout&quot;&gt;</span><br><span class="line">  &lt;img src=&quot;1.jpg&quot;&gt;</span><br><span class="line">  &lt;p&gt;一段文字,...&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">/*margin具有流体特性下的改变尺寸特性，margin可以很方便实现很多流体布局*/</span><br><span class="line">CSS</span><br><span class="line">.twoColLayout&#123;overflow:hidden;&#125;</span><br><span class="line">.twoColLayout&gt;img&#123;float:legt;&#125;</span><br><span class="line">.twoColLayout&gt;p&#123;margin-left:130px;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;twoColLayout&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;full&quot;&gt;</span><br><span class="line">    &lt;p&gt;一段文字,...&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;img src=&quot;1.jpg&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">/*当图片右侧定位，为了元素在DOM文档流中的前后顺序和视觉表现上前后顺序一致，借助margin负值*/</span><br><span class="line">.twoColLayout&#123;overflow:hidden;&#125;</span><br><span class="line">.full&#123;</span><br><span class="line">  width:100%;</span><br><span class="line">  float:left;</span><br><span class="line">  &#125;</span><br><span class="line">p&#123;margin-right:130px&#125;</span><br><span class="line">.twoColLayout&gt;img&#123;</span><br><span class="line">  float:left;</span><br><span class="line">  margin-left:-120px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="一侧定宽的两栏自适应布局——position"><a href="#一侧定宽的两栏自适应布局——position" class="headerlink" title="一侧定宽的两栏自适应布局——position"></a>一侧定宽的两栏自适应布局——position</h2><p>优点：任意排列元素，无须管HTML中出现的顺序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">nav &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0px;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">section &#123;</span><br><span class="line">  /* position is static by default */</span><br><span class="line">  margin-left: 200px;      &lt;!--绝对定位元素脱离文档流，会遮蔽其他元素--&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;#&quot;&gt;XXX&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;p&gt;XXX&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="三栏布局——float布局"><a href="#三栏布局——float布局" class="headerlink" title="三栏布局——float布局"></a>三栏布局——float布局</h2><ol>
+<li>两边固定宽度，中间宽度自适应。</li>
+</ol>
+<ul>
+<li>基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧</li>
+<li>元素浮动后，脱离文档流，后面的元素受浮动影响，设置受影响元素的margin值即可</li>
+<li>利用中间元素的margin值控制两边的间距</li>
+</ul>
+<p><strong>注意</strong>:宽度小于左右部分宽度之和时，右侧部分会被挤下去。</p>
+<p><strong>不足</strong>:div顺序不能改变，无法优先加载重要的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;left&quot;&gt;左侧&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;right&quot;&gt;右侧&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;middle&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    .wrap &#123;background: #eee; overflow: hidden; padding: 20px;&#125;  </span><br><span class="line">&lt;!-- 设置overflow:hidden，生成BFC，计算高度时考虑浮动元素。解决父元素高度塌陷问题 --&gt;</span><br><span class="line">    .left &#123;width: 200px; height: 50px; float: left; &#125;</span><br><span class="line">    .right &#123;width: 120px; height:  200px; float: right; &#125;</span><br><span class="line">    .middle &#123;margin-left: 220px;  margin-right: 140px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sofiaying.github.io/blog/2018/04/18/布局/" data-id="cjg55agnd000myi3537c54rtc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2018/04/18/ES6——Promise/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Promise
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2018/04/18/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git备忘</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js-es6/">js es6</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/css/" style="font-size: 15px;">css</a> <a href="/blog/tags/git/" style="font-size: 10px;">git</a> <a href="/blog/tags/html/" style="font-size: 10px;">html</a> <a href="/blog/tags/js/" style="font-size: 20px;">js</a> <a href="/blog/tags/js-es6/" style="font-size: 10px;">js es6</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/ES6——Promise/">Promise</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/布局/">Css布局</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/git/">git备忘</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/实用小例子/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Sofia Ying<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

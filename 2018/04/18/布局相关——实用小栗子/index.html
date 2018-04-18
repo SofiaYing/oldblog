@@ -5,17 +5,20 @@
   
 
   
-  <title>article | Sofia&#39;s Blog</title>
+  <title>布局实用小栗子 | Sofia&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="blog js css html">
+  <meta name="description" content="块级元素垂直居中对齐方式——绝对定位元素margin:auto居中margin:auto填充规则：  如果一侧定值，一侧auto，则auto为剩余空间大小 如果两次均为auto，则平均分配剩余空间  触发margin:auto计算有一个前提条件：width或height为auto时，元素具有对应方向的自动填充特性，所以正常使用时只能实现水平方向居中。 举例：son元素水平和垂直方向同时居中`.fa">
+<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="article">
-<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/article/index.html">
+<meta property="og:title" content="布局实用小栗子">
+<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/布局相关——实用小栗子/index.html">
 <meta property="og:site_name" content="Sofia&#39;s Blog">
+<meta property="og:description" content="块级元素垂直居中对齐方式——绝对定位元素margin:auto居中margin:auto填充规则：  如果一侧定值，一侧auto，则auto为剩余空间大小 如果两次均为auto，则平均分配剩余空间  触发margin:auto计算有一个前提条件：width或height为auto时，元素具有对应方向的自动填充特性，所以正常使用时只能实现水平方向居中。 举例：son元素水平和垂直方向同时居中`.fa">
 <meta property="og:locale" content="ZH">
-<meta property="og:updated_time" content="2018-04-18T13:28:24.000Z">
+<meta property="og:updated_time" content="2018-04-18T13:32:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="article">
+<meta name="twitter:title" content="布局实用小栗子">
+<meta name="twitter:description" content="块级元素垂直居中对齐方式——绝对定位元素margin:auto居中margin:auto填充规则：  如果一侧定值，一侧auto，则auto为剩余空间大小 如果两次均为auto，则平均分配剩余空间  触发margin:auto计算有一个前提条件：width或height为auto时，元素具有对应方向的自动填充特性，所以正常使用时只能实现水平方向居中。 举例：son元素水平和垂直方向同时居中`.fa">
   
     <link rel="alternate" href="/blog/atom.xml" title="Sofia&#39;s Blog" type="application/atom+xml">
   
@@ -62,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-article" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-布局相关——实用小栗子" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/04/18/article/" class="article-date">
-  <time datetime="2018-04-18T09:43:06.000Z" itemprop="datePublished">2018-04-18</time>
+    <a href="/blog/2018/04/18/布局相关——实用小栗子/" class="article-date">
+  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
 </a>
     
   </div>
@@ -76,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      article
+      布局实用小栗子
     </h1>
   
 
@@ -84,32 +87,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="块级元素垂直居中对齐方式——绝对定位元素margin-auto居中"><a href="#块级元素垂直居中对齐方式——绝对定位元素margin-auto居中" class="headerlink" title="块级元素垂直居中对齐方式——绝对定位元素margin:auto居中"></a>块级元素垂直居中对齐方式——绝对定位元素margin:auto居中</h2><p>margin:auto填充规则：</p>
+<ul>
+<li>如果一侧定值，一侧auto，则auto为剩余空间大小</li>
+<li>如果两次均为auto，则平均分配剩余空间</li>
+</ul>
+<p>触发margin:auto计算有一个前提条件：width或height为auto时，元素具有对应方向的自动填充特性，所以正常使用时只能实现水平方向居中。</p>
+<p><strong>举例：son元素水平和垂直方向同时居中</strong><br><code>`</code><br>.father{<br>position:relative;<br>width:300px;height:150px;<br>}<br>.son{<br>position:absolute;         /<em>此时son元素尺寸表现为“格式化宽度和格式化高度”，尺寸自动填充父级元素的可用尺寸</em>/<br>top:o;right:0;bottom:0;right:0;<br>width:200px;height:100px;<br>margin:auto;<br>/<em>由于绝对定位元素的格式化高度，即使父元素height:auto也同样支持，IE8及以上版本支持</em>/<br>/<em>对于替换元素，设置display:block，则计算规则相同</em>/<br>}</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/article/" data-id="cjg55agmi0003yi35rbw0weg0" class="article-share-link">Share</a>
+      <a data-url="https://sofiaying.github.io/blog/2018/04/18/布局相关——实用小栗子/" data-id="cjg55agnh000oyi35l74gnbtb" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/04/18/布局相关——实用小栗子/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2018/04/18/基础——块级元素/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          布局实用小栗子
+          基础-块级元素
         
       </div>
     </a>
   
   
-    <a href="/blog/2018/04/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2018/04/18/article/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">article</div>
     </a>
   
 </nav>

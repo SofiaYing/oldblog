@@ -5,17 +5,20 @@
   
 
   
-  <title>article | Sofia&#39;s Blog</title>
+  <title>js闭包 | Sofia&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="blog js css html">
+  <meta name="description" content="12345678910function bindname(name)&amp;#123;  return function(action)&amp;#123;    console.log(`$&amp;#123;name&amp;#125; is $&amp;#123;action&amp;#125;ing);     //ES6字符串模板，此处用来实现变量拼接  &amp;#125;&amp;#125;var b = bindname(&amp;quot;xiao">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="article">
-<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/article/index.html">
+<meta property="og:title" content="js闭包">
+<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/js——闭包/index.html">
 <meta property="og:site_name" content="Sofia&#39;s Blog">
+<meta property="og:description" content="12345678910function bindname(name)&amp;#123;  return function(action)&amp;#123;    console.log(`$&amp;#123;name&amp;#125; is $&amp;#123;action&amp;#125;ing);     //ES6字符串模板，此处用来实现变量拼接  &amp;#125;&amp;#125;var b = bindname(&amp;quot;xiao">
 <meta property="og:locale" content="ZH">
-<meta property="og:updated_time" content="2018-04-18T13:28:24.000Z">
+<meta property="og:updated_time" content="2018-04-18T13:35:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="article">
+<meta name="twitter:title" content="js闭包">
+<meta name="twitter:description" content="12345678910function bindname(name)&amp;#123;  return function(action)&amp;#123;    console.log(`$&amp;#123;name&amp;#125; is $&amp;#123;action&amp;#125;ing);     //ES6字符串模板，此处用来实现变量拼接  &amp;#125;&amp;#125;var b = bindname(&amp;quot;xiao">
   
     <link rel="alternate" href="/blog/atom.xml" title="Sofia&#39;s Blog" type="application/atom+xml">
   
@@ -62,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-article" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js——闭包" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/04/18/article/" class="article-date">
-  <time datetime="2018-04-18T09:43:06.000Z" itemprop="datePublished">2018-04-18</time>
+    <a href="/blog/2018/04/18/js——闭包/" class="article-date">
+  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
 </a>
     
   </div>
@@ -76,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      article
+      js闭包
     </h1>
   
 
@@ -84,32 +87,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function bindname(name)&#123;</span><br><span class="line">  return function(action)&#123;</span><br><span class="line">    console.log(`$&#123;name&#125; is $&#123;action&#125;ing);     //ES6字符串模板，此处用来实现变量拼接</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = bindname(&quot;xiaoming&quot;);           //声明赋值之后，相当于在函数bindname的上面写入了一个变量b，之后就可以对立面的函数进行操作。            </span><br><span class="line">b(&quot;eat&quot;);    //xiaoming is eating</span><br><span class="line">b(&quot;drink&quot;);      </span><br><span class="line">//大量使用的xiaoming不用每次都重复传入,又不会写死，下次还可以用xiaohong。</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/article/" data-id="cjg55agmi0003yi35rbw0weg0" class="article-share-link">Share</a>
+      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——闭包/" data-id="cjg55agmw0009yi35ns5ks7jg" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/04/18/布局相关——实用小栗子/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2018/04/18/js——事件处理程序/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          布局实用小栗子
+          JS事件处理程序
         
       </div>
     </a>
   
   
-    <a href="/blog/2018/04/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2018/04/18/CSS——选择器/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Css选择器</div>
     </a>
   
 </nav>

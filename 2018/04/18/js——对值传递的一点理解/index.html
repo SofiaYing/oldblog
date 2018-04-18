@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>关于js值传递的一点理解 | Sofia&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScript其实是值传递了，这种理解也是错的。你这种理解，叫“传递的是值”，而非“值传递”。） 第二种误解是：值类型是">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于js值传递的一点理解">
+<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/js——对值传递的一点理解/index.html">
+<meta property="og:site_name" content="Sofia&#39;s Blog">
+<meta property="og:description" content="第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScript其实是值传递了，这种理解也是错的。你这种理解，叫“传递的是值”，而非“值传递”。） 第二种误解是：值类型是">
+<meta property="og:locale" content="ZH">
+<meta property="og:image" content="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A51.png">
+<meta property="og:image" content="https://images2015.cnblogs.com/blog/428620/201601/428620-20160113172919038-753154977.png">
+<meta property="og:image" content="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A52.png?raw=true">
+<meta property="og:updated_time" content="2018-04-18T13:35:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于js值传递的一点理解">
+<meta name="twitter:description" content="第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScript其实是值传递了，这种理解也是错的。你这种理解，叫“传递的是值”，而非“值传递”。） 第二种误解是：值类型是">
+<meta name="twitter:image" content="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A51.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Sofia&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Sofia&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sofiaying.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js——对值传递的一点理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/04/18/js——对值传递的一点理解/" class="article-date">
+  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于js值传递的一点理解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScript其实是值传递了，这种理解也是错的。你这种理解，叫“传递的是值”，而非“值传递”。）</li>
+<li>第二种误解是：值类型是值传递，引用类型用的是引用传递。</li>
+<li>第三种误解是：认为所有的都是值传递，因为引用本质上也是个值，本质就是个指针嘛。</li>
+<li>第四种误解是：常出现在C++程序员中，声明的参数是引用类型的，就是引用传递；声明的参数是一般类型或指针的就是值传递。<h3 id="值传递和引用传递"><a href="#值传递和引用传递" class="headerlink" title="值传递和引用传递"></a>值传递和引用传递</h3><blockquote>
+<p>描述参数求值策略，属于函数调用时参数的求值策略(Evaluation Strategy)，这是对调用函数时，求值和传值的方式的描述，而非传递的内容的类型（内容指：是值类型还是引用类型，是值还是指针）。</p>
+</blockquote>
+<h3 id="值类型-引用类型"><a href="#值类型-引用类型" class="headerlink" title="值类型/引用类型"></a>值类型/引用类型</h3><blockquote>
+<p>描述内存分配方式，是用于区分两种内存分配方式，值类型在调用栈上分配，引用类型在堆上分配。</p>
+</blockquote>
+</li>
+</ul>
+<p>在函数调用过程中，调用方提供实参，这些实参可以是常量：Call(1);也可以是变量：Call(x);也可以是他们的组合：Call(2 * x + 1);也可以是对其它函数的调用：Call(GetNumber());但是所有这些实参的形式，都统称为表达式(Expression)。求值（Evaluation）即是指对这些表达式的简化并求解其值的过程。<br>求值策略(值传递和引用传递)的关注的点在于，这些表达式在调用函数的过程中，求值的时机、值的形式的选取等问题。求值的时机，可以是在函数调用前，也可以是在函数调用后，由被调用者自己求值。这些求值策略的划分依据是：求值的时机（调用前还是调用中）和值本身的传递方式。</p>
+<p><img src="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A51.png" alt="求值策略"></p>
+<p>对于值传递，无论是值类型还是引用类型，都会在调用栈上创建一个副本，不同是，对于值类型而言，这个副本就是整个原始值的复制。而对于引用类型而言，由于引用类型的实例在堆中，在栈上只有它的一个引用（一般情况下是指针），其副本也只是这个引用的复制，而不是整个原始对象的复制。<br><img src="https://images2015.cnblogs.com/blog/428620/201601/428620-20160113172919038-753154977.png" alt=""><br>这便引出了值类型和引用类型（这不是在说值传递）的最大区别：值类型用做参数会被复制，但是很多人误以为这个区别是值类型的特性。其实这是值传递带来的效果，和值类型本身没有关系。只是最终结果是这样。</p>
+<p><img src="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A52.png?raw=true" alt="求值策略区别"></p>
+<p>综上所述，对于JavaScript的函数调用方式最准确的描述是：参数藉由值传递方式，传递的值是个引用。（句中两个“值”不是一个意思，第一个值是evaluation result，第二个值是value content）由于这个描述太绕，对于Java，Python、Ruby、JavaScript等语言使用的这种求值策略，起了一个更贴切名字，叫Call by sharing。这个名字诞生于40年前。</p>
+<p>参考：<br>作者：Yolanda<br>链接：<a href="https://www.zhihu.com/question/31203609/answer/112157038" target="_blank" rel="noopener">https://www.zhihu.com/question/31203609/answer/112157038</a><br>来源：知乎</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setName(obj)&#123;        //可以这么来理解, 函数有一个局部变量obj, 然后接收person做参数, 将person的值赋给了obj变量. 因为person仅仅是存储了一个引用, obj也仅仅是一个引用。那么到了这个时候, 就有两个引用指向了person指向的对象(person和obj)。</span><br><span class="line">  obj.name = &quot;Ni&quot;;            //obj = new Object();让obj变量又指向了一个新生成的对象, 此时指向person所指对象的引用就只有一个了, 至此函数和person所指对象的关系完全断开。</span><br><span class="line">  obj = new Object();         //此时对obj的操作, 跟person所指对象一点关系都没有, 只是在操作这个新生成的对象而已。实际上，当在函数内部重写obj时，这个变量引用的就是一个局部对象了，而这个对象在函数执行结束后, 就被垃圾回收了。</span><br><span class="line">  boj.name = &quot;Ge&quot;;</span><br><span class="line">&#125;</span><br><span class="line">var person = new Object();    //person是一个引用类型变量, 存储了一个指向某个对象的引用。person指向的对象才是一个复杂数据类型, 他包括了属性, 方法等一系列东西。</span><br><span class="line">setName(person);</span><br><span class="line">console.log(person.name);    //&quot;Ni&quot;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——对值传递的一点理解/" data-id="cjg55agmy000byi35xrqbh6me" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/04/18/ES6——Promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Promise</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js-es6/">js es6</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/css/" style="font-size: 15px;">css</a> <a href="/blog/tags/git/" style="font-size: 10px;">git</a> <a href="/blog/tags/html/" style="font-size: 10px;">html</a> <a href="/blog/tags/js/" style="font-size: 20px;">js</a> <a href="/blog/tags/js-es6/" style="font-size: 10px;">js es6</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/ES6——Promise/">Promise</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/布局/">Css布局</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/git/">git备忘</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/实用小例子/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Sofia Ying<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

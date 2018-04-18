@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JS面向对象 | Sofia&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="面向对象的三大特点： 封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】 继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】 多态：让代码更灵活。  对象：某个特定引用类型的实例。 普通对象 数组：下标为‘0’到‘length’的有序字符串 函数  原型：理解为公有属性 注意：访问proto会造成性能上的降低。 函数和对象是没有关">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS面向对象">
+<meta property="og:url" content="https://sofiaying.github.io/blog/2018/04/18/js——面向对象（this，new，继承）/index.html">
+<meta property="og:site_name" content="Sofia&#39;s Blog">
+<meta property="og:description" content="面向对象的三大特点： 封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】 继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】 多态：让代码更灵活。  对象：某个特定引用类型的实例。 普通对象 数组：下标为‘0’到‘length’的有序字符串 函数  原型：理解为公有属性 注意：访问proto会造成性能上的降低。 函数和对象是没有关">
+<meta property="og:locale" content="ZH">
+<meta property="og:updated_time" content="2018-04-18T13:36:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS面向对象">
+<meta name="twitter:description" content="面向对象的三大特点： 封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】 继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】 多态：让代码更灵活。  对象：某个特定引用类型的实例。 普通对象 数组：下标为‘0’到‘length’的有序字符串 函数  原型：理解为公有属性 注意：访问proto会造成性能上的降低。 函数和对象是没有关">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Sofia&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Sofia&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sofiaying.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js——面向对象（this，new，继承）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2018/04/18/js——面向对象（this，new，继承）/" class="article-date">
+  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS面向对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="面向对象的三大特点："><a href="#面向对象的三大特点：" class="headerlink" title="面向对象的三大特点："></a>面向对象的三大特点：</h3><ul>
+<li>封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】</li>
+<li>继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】</li>
+<li>多态：让代码更灵活。</li>
+</ul>
+<h2 id="对象：某个特定引用类型的实例。"><a href="#对象：某个特定引用类型的实例。" class="headerlink" title="对象：某个特定引用类型的实例。"></a>对象：某个特定引用类型的实例。</h2><ul>
+<li>普通对象</li>
+<li>数组：下标为‘0’到‘length’的有序字符串</li>
+<li>函数</li>
+</ul>
+<h2 id="原型：理解为公有属性"><a href="#原型：理解为公有属性" class="headerlink" title="原型：理解为公有属性"></a>原型：理解为公有属性</h2><ul>
+<li>注意：访问<strong>proto</strong>会造成性能上的降低。</li>
+<li>函数和对象是没有关联的，一般来说this就表示调用它的这个对象。</li>
+<li>参数的值只有在传参的时候才能确定，this是第一个参数 =&gt; this的值只有的传参的时候才能确定</li>
+</ul>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h3 id="1-默认绑定"><a href="#1-默认绑定" class="headerlink" title="1.默认绑定"></a>1.默认绑定</h3><ul>
+<li>最常用的函数调用类型：独立函数调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this  //this是不确定的，浏览器下是window，node.js下是global，严格模式下是undefined</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">  console.log(this);  //this此时不确定，因为并未给函数a传参</span><br><span class="line">&#125;</span><br><span class="line">a()    //在浏览器中运行的，this的值是window（全局对象）</span><br><span class="line">       //在node.js中是global（全局对象）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">  &quot;use strict&quot;</span><br><span class="line">  console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">a()     //undefined,因为是在严格模式下，浏览器不会帮忙去传参，此时没传参数，默认为undefined</span><br></pre></td></tr></table></figure>
+<h3 id="2-隐式绑定"><a href="#2-隐式绑定" class="headerlink" title="2.隐式绑定"></a>2.隐式绑定</h3><ul>
+<li><p>当函数引用有上下文对象时，隐式绑定规则会把函数调用中的this绑定到这个上下文对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;sayThis:a&#125;;</span><br><span class="line">obj.sayThis();      </span><br><span class="line">//函数被保存为对象的一个方法，当一个方法被调用时，this被绑定到该对象。</span><br><span class="line">//隐式传递，此时this就是调用它的对象，即obj。</span><br><span class="line">//方法可以使用this访问自己所属的对象，它能从对象中取值或对对象进行修改。this的绑定发生在调用时，这个延迟绑定使得函数可以对this高度服用。</span><br><span class="line">obj.sayThis.call();       //call显示传参，不会帮忙传参，需要自己去指定（第一个参数代表this），严格模式下，默认为undefined</span><br><span class="line">                          //call显示传参，如果传了this，在严格模式下，传什么是什么，非严格模式下，1会被转换成对象1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对象属性引用链中只有上一层或者说最后一层在调用位置中起作用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">  console.log(&quot;this.a&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var obj2 = &#123;</span><br><span class="line">  a:42;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  obj2:obj2;</span><br><span class="line">&#125;</span><br><span class="line">obj1.obj2.foo();     //42,this绑定的是obj2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐式丢失问题：即被隐式绑定的函数会丢失绑定对象，就会应用默认规则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">  console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var bar = obj.foo;</span><br><span class="line">var a = &apos;global&apos;;</span><br><span class="line">bar();    //global,此时bar是obj.foo的一个引用，实际引用的是foo函数本身，所以此时bar()其实是一个不带任何修饰的函数调用，应用了默认绑定。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//传入回调函数情况</span><br><span class="line">function foo()&#123;</span><br><span class="line">  console.log(&quot;this.a&quot;);</span><br><span class="line">&#125;</span><br><span class="line">function doFoo(fn)&#123;</span><br><span class="line">  fn();</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;globle&quot;;</span><br><span class="line">doFoo(obj);   //globle,参数传递其实是一种隐式赋值，所以传入函数时也会被隐式赋值，与上一个例子结果一样。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//将函数传入语言内置函数情况</span><br><span class="line">function foo()&#123;</span><br><span class="line">  console.log(&quot;this.a&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;globle&quot;;</span><br><span class="line">setTimeout(obj.foo,100);   //global,注意该内置函数实现类似function setTimeout(fn,delay)&#123;fn();&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">显示绑定</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">button.onclick = function()&#123;</span><br><span class="line">  console.log(this);      </span><br><span class="line">  //如果是直接调用触发，this是button（虽然还没执行，但是文档中有写到），传递给指定事件的函数，函数内的this的值是触发事件的元素。</span><br><span class="line">  //如果使用call显示调用，this就是不确定的</span><br><span class="line">  this.disabled = true;     </span><br><span class="line">  var f=()=&gt;&#123;     </span><br><span class="line">    this.disabled = false;   //箭头函数内的this是确定的，与外部this相同，相当于禁用this，无法对其更改。但是外面的this（第三行代码）是函数内部的this，是不确定的。</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function creatSoldier()&#123;     //用一个函数来封装</span><br><span class="line">  var obj=&#123;      //模拟构造函数，最后需要返回一个对象</span><br><span class="line">    ID:i;</span><br><span class="line">    blood:42;</span><br><span class="line">  &#125;</span><br><span class="line"> obj. __proto__ = creatSoldier.prototype ;  </span><br><span class="line"> //写在obj外面，避免重复创建，占用内存</span><br><span class="line"> //注意：无论是__proto__，还是prototype，都只是一个名字，而已。</span><br><span class="line"> return obj; </span><br><span class="line">&#125;</span><br><span class="line">creatSoldier.prototype=&#123;      </span><br><span class="line">//此处不写成function soldier()&#123;&#125; ，而将其作为creatSoldier的一个属性，这样能将两者的依赖关系明确的表达出来，以免造成类似优化中当做无关内容误删或移动。</span><br><span class="line">//注意这里也可以叫creatSolider.xxx 中文理解 creatSolider.共有属性 。只是建议使用prototype（原型），是个约定。</span><br><span class="line">  兵种：”大兵“；</span><br><span class="line">  攻击行为：function()&#123;/*攻击行为代码*/&#125;；</span><br><span class="line">  前进行为：function()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var sodiers = [];</span><br><span class="line">for(var i=0;i&lt;=100;i++)&#123;</span><br><span class="line">  Array.propotype.push.call(sodliers,creatSolider().call())  //等价于sodliers.push(creatSolider())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>new帮忙做三件事</strong></p>
+<p>(1)js已经帮忙初始化一个空对象this，不需要自己去想变量名</p>
+<p>(2)帮忙创建好obj. <strong>proto</strong> = creatSoldier.prototype, 同时会为其自动创建constructor属性，表述了所有的实例都是由creatSoldier创建的。</p>
+<p>(3)已经帮忙返回this，不需要自己去写。如果自己写了return,如return {}，js会帮忙<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//用new来创建</span><br><span class="line">//注意区别</span><br><span class="line">function creatSoldier(name)&#123;</span><br><span class="line">  //this = &#123;&#125;;</span><br><span class="line">  //this.__proto__ = creatSoldier.prototype;</span><br><span class="line">  this.ID=i;</span><br><span class="line">  this.blood=42;</span><br><span class="line">  this.name=name||&quot;无名战士&quot;;</span><br><span class="line">  //return this</span><br><span class="line">&#125;</span><br><span class="line">//注意creatSoldier.prototype内已有一个默认属性constructor，此时如果我们重写creatSoldier.prototype会覆盖原有属性。（=号的含义就是将右侧的值复制到左边，存储了新的地址，改变了关联）</span><br><span class="line">//方法一，重写一般该属性</span><br><span class="line">creatSoldier.prototype = &#123;  </span><br><span class="line">  constructor:creatSoldier;     </span><br><span class="line">  兵种:&quot;大兵&quot;;</span><br><span class="line">  攻击行为:function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">  前进行为:function()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">//方法二，逐个添加，更常用</span><br><span class="line">creatSoldier.prototype.兵种 = &quot;大兵&quot;；</span><br><span class="line">creatSoldier.prototype.攻击行为 = function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">creatSoldier.prototype.前进行为: = function()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">var sodiers = [];</span><br><span class="line">for(var i=0;i&lt;=100;i++)&#123;</span><br><span class="line">  sodliers.push(new creatSolider());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>约定俗成的一些事：</li>
+</ul>
+<ol>
+<li>构造函数首字母大写 CreatSoldier</li>
+<li>构造函数省略creat 因为new已经代表了creat的意思 Solider</li>
+<li>如果构造函数没有参数，可以省略括号 sodliers.push(new Solider)</li>
+</ol>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function Human(options)&#123;</span><br><span class="line">  this.name = options.name;</span><br><span class="line">  this.肤色 = options.肤色;</span><br><span class="line">&#125;</span><br><span class="line">Human.prototype.eat = function()&#123;...&#125;;</span><br><span class="line">Human.prototype.drink = function()&#123;...&#125;;</span><br><span class="line"></span><br><span class="line">function Soldier(options)&#123;</span><br><span class="line">  Human.call(this,options);    //继承Human特有属性（调用时先让Human去帮忙初始化）</span><br><span class="line">  this.ID = options.ID;</span><br><span class="line">  this.blood=42;     </span><br><span class="line">  //js已帮忙写好this.__proto__=Soldier.prototype,作用是将空对象连接上共有属性</span><br><span class="line">&#125;</span><br><span class="line">Soldier.prototype.兵种 = &quot;大兵&quot;；</span><br><span class="line">Soldier.prototype.攻击行为 = function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">Soldier.prototype.前进行为 = function()&#123;&#125;;</span><br><span class="line">Soldier.__proto__ = Human.prototype;     //继承Human共有属性</span><br><span class="line"></span><br><span class="line">var s = new Solider(&#123;name:&apos;F&apos;,肤色:&apos;黄&apos;,ID:1&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="注意：proto不能用，会降低性能。"><a href="#注意：proto不能用，会降低性能。" class="headerlink" title="注意：proto不能用，会降低性能。"></a>注意：<strong>proto</strong>不能用，会降低性能。</h3><h3 id="基于原型链"><a href="#基于原型链" class="headerlink" title="基于原型链"></a>基于原型链</h3><ul>
+<li>方法一：兼容IE，所以要实现<code>Soldier.__proto__ = Human.prototype;</code>，ES3方法是用如下三行代码替代:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function fakeHuman()&#123;&#125;;</span><br><span class="line">fakeHuman.prototype = Human.prototype;</span><br><span class="line">Soldier.prototype = new fakeHuman();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function X()&#123;</span><br><span class="line">  //this = &#123;&#125;;</span><br><span class="line">  //this.__proto__ = X.prototype;</span><br><span class="line">  //return this;</span><br><span class="line">&#125;;</span><br><span class="line">Soldier.prototype = new X();</span><br><span class="line">//相当于Soldier.prototype.__proto__ === this.__proto__ === X.prototype</span><br><span class="line">//可以观察到X就相当于Human,但是原本的Huamn是拥有特有属性的，如果直接使用原有的Human,会将Human内的私用属性返回;也不能创建同名空函数。</span><br><span class="line">//综上，我们需要创建一个假的Human函数保存Human.prototype,由此得到了以上三行替代代码。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二：不兼容IE，更常用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Soldier.prototype = Object.creat(Human.prototype);     //create可以用来指定原型</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="基于class，模仿java"><a href="#基于class，模仿java" class="headerlink" title="基于class，模仿java"></a>基于class，模仿java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Human&#123;</span><br><span class="line">  construtor(options)&#123;</span><br><span class="line">    this.name = options.name;</span><br><span class="line">    this.肤色 = options.肤色;</span><br><span class="line">  &#125;</span><br><span class="line">  eat()&#123;&#125;;        //Human.prototype.eat = function()&#123;...&#125;;</span><br><span class="line">  drink()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Soldier extends Human&#123;   //extends 只继承共有属性，相当于对原型链的扩展，特有属性需要用super</span><br><span class="line">  constructor&#123;</span><br><span class="line">    super(options);          //super意思是用父类去构造，调用了一下Human(不过要注意此时Human已经变成了一个类，是不能作为函数执行的，所以用了super，代替了Human.call(this,options)）。</span><br><span class="line">    this.ID = options.ID;</span><br><span class="line">    this.blood=42; </span><br><span class="line">    this.兵种 = &quot;大兵&quot;;    //注意：新的语法有一个缺点，共有属性是不支持非函数的，只能写在特有属性里。</span><br><span class="line">  &#125;    </span><br><span class="line">  攻击行为();</span><br><span class="line">  前进行为();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Soldier.prototype.攻击行为 = function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">Soldier.prototype.前进行为 = function()&#123;&#125;;</span><br><span class="line">Soldier.__proto__ = Human.prototype;     //继承Human共有属性</span><br><span class="line"></span><br><span class="line">var s = new Solider(&#123;name:&apos;F&apos;,肤色:&apos;黄&apos;,ID:1&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——面向对象（this，new，继承）/" data-id="cjg55agn1000dyi35jnn9asn1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2018/04/18/CSS——选择器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Css选择器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2018/04/18/js基础——常用互动方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">js基础学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js-es6/">js es6</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/css/" style="font-size: 15px;">css</a> <a href="/blog/tags/git/" style="font-size: 10px;">git</a> <a href="/blog/tags/html/" style="font-size: 10px;">html</a> <a href="/blog/tags/js/" style="font-size: 20px;">js</a> <a href="/blog/tags/js-es6/" style="font-size: 10px;">js es6</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/ES6——Promise/">Promise</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/布局/">Css布局</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/git/">git备忘</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/04/18/实用小例子/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Sofia Ying<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
