@@ -10,7 +10,7 @@
   
   <title>
     
-      Sofia&#39;s Blog
+      About | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -125,90 +125,44 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="about-banner" style="background-image: url(https://img3.duitang.com/uploads/item/201602/04/20160204221813_NKfht.jpeg)"></div>
+<div class="author">
+  <div class="head">
+    <img src="https://avatars1.githubusercontent.com/u/21055558?s=400&u=c8c2d33f1c7fda1aed5a752cd9edcb7f472c8983&v=4" />
+  </div>
+  <h3>Sofia</h3>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/2018/04/18/基础——块级元素/">基础-块级元素</a>
-      </h2>
-      <p class="article-date">April 18, 2018</p>
-      
-        
-  <a href="/blog/blog/tags#html" >
-    <span class="tag-code">html</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          块级元素特性：一个块级元素会新开始一行并且尽可能撑满容器。其他常用的块级元素包括 p 、 form 和HTML5中的新元素： header 、 footer 、 section 等等
-
-        
-      </div>
-      <a class="more" href="/blog/2018/04/18/基础——块级元素/">Read more</a>
-    </article>
+    <p class="description">Sow nothing,reap nothing.</p>
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/2018/04/18/布局/">Css布局</a>
-      </h2>
-      <p class="article-date">April 18, 2018</p>
-      
-        
-  <a href="/blog/blog/tags#css" >
-    <span class="tag-code">css</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          一侧定宽的两栏自适应布局——float1234567891011/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/HTML&lt;div class=&quot;twoColLayout&quot;&gt;  &lt;img src=&quot;1.jpg&quot;&gt; ...
-        
-      </div>
-      <a class="more" href="/blog/2018/04/18/布局/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/2018/04/18/article/">article</a>
-      </h2>
-      <p class="article-date">April 18, 2018</p>
-      
-      <div class="article-summary">
-        
-          
-        
-      </div>
-      <a class="more" href="/blog/2018/04/18/article/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/2018/04/18/hello-world/">Hello World</a>
-      </h2>
-      <p class="article-date">April 18, 2018</p>
-      
-      <div class="article-summary">
-        
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer ...
-        
-      </div>
-      <a class="more" href="/blog/2018/04/18/hello-world/">Read more</a>
-    </article>
-  
-
-  
-    <div class="guide-pager">
-  
-    <a href="/blog/"><span class="page-arrow">← </span>Prev</a>
-  
-  
-    <a class="unvisible" href="/blog/">Next <span class="page-arrow">→</span></a>
-  
+  <section class="share-icons">
+    
+    
+    
+      <a class="icon-github" href="https://github.com/sofiaying" target="_blank">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    
+    
+    
+  </section>
 </div>
-  
-</main>
 
+<script>
+  (function () {
+    $('.header').removeClass('fixed-header')
+    var windowH = $(window).height();
+    var author = $('.author')
+    var bodyH = author.offset().top + author[0].offsetHeight + 71;
+    if (bodyH < windowH) {
+      author.css({
+        'margin-bottom': windowH - bodyH
+      })
+    }
+  })();
+</script>
 
     <div class="scroll-top">
   <span class="arrow-icon"></span>

@@ -1,718 +1,420 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="yanm1ng&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
   
-
+    <link rel="shortcut icon" href="/blog/css/images/read.png">
   
-  <title>Sofia&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="blog js css html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sofia&#39;s Blog">
-<meta property="og:url" content="https://sofiaying.github.io/blog/index.html">
-<meta property="og:site_name" content="Sofia&#39;s Blog">
-<meta property="og:locale" content="ZH">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sofia&#39;s Blog">
-  
-    <link rel="alternate" href="/blog/atom.xml" title="Sofia&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+  <title>
+    
+      Sofia&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/blog/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/blog/js/qrious.js"></script>
+<script src="/blog/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
 </head>
+<div class="wechat-share">
+  <!-- <img src="/css/images/logo.png" /> -->
+</div>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">Sofia&#39;s Blog</a>
-      </h1>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/blog/">
+      <div class="logo"></div>
+      <span>Sofia's Blog</span>
+    </a>
+    <ul class="right-list">
       
+        <li class="list-item">
+          
+            <a href="/blog/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+    <div class="menu-mask">
+      <ul class="menu-list">
         
-          <a class="main-nav-link" href="/blog/">Home</a>
-        
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sofiaying.github.io/blog"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-js——对值传递的一点理解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/js——对值传递的一点理解/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScript其实是值传递了，这种理解也是错的。你这种理解，叫“传递的是值”，而非“值传递”。）</li>
-<li>第二种误解是：值类型是值传递，引用类型用的是引用传递。</li>
-<li>第三种误解是：认为所有的都是值传递，因为引用本质上也是个值，本质就是个指针嘛。</li>
-<li>第四种误解是：常出现在C++程序员中，声明的参数是引用类型的，就是引用传递；声明的参数是一般类型或指针的就是值传递。<h3 id="值传递和引用传递"><a href="#值传递和引用传递" class="headerlink" title="值传递和引用传递"></a>值传递和引用传递</h3><blockquote>
-<p>描述参数求值策略，属于函数调用时参数的求值策略(Evaluation Strategy)，这是对调用函数时，求值和传值的方式的描述，而非传递的内容的类型（内容指：是值类型还是引用类型，是值还是指针）。</p>
-</blockquote>
-<h3 id="值类型-引用类型"><a href="#值类型-引用类型" class="headerlink" title="值类型/引用类型"></a>值类型/引用类型</h3><blockquote>
-<p>描述内存分配方式，是用于区分两种内存分配方式，值类型在调用栈上分配，引用类型在堆上分配。</p>
-</blockquote>
-</li>
-</ul>
-<p>在函数调用过程中，调用方提供实参，这些实参可以是常量：Call(1);也可以是变量：Call(x);也可以是他们的组合：Call(2 * x + 1);也可以是对其它函数的调用：Call(GetNumber());但是所有这些实参的形式，都统称为表达式(Expression)。求值（Evaluation）即是指对这些表达式的简化并求解其值的过程。<br>求值策略(值传递和引用传递)的关注的点在于，这些表达式在调用函数的过程中，求值的时机、值的形式的选取等问题。求值的时机，可以是在函数调用前，也可以是在函数调用后，由被调用者自己求值。这些求值策略的划分依据是：求值的时机（调用前还是调用中）和值本身的传递方式。</p>
-<p><img src="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A51.png" alt="求值策略"></p>
-<p>对于值传递，无论是值类型还是引用类型，都会在调用栈上创建一个副本，不同是，对于值类型而言，这个副本就是整个原始值的复制。而对于引用类型而言，由于引用类型的实例在堆中，在栈上只有它的一个引用（一般情况下是指针），其副本也只是这个引用的复制，而不是整个原始对象的复制。<br><img src="https://images2015.cnblogs.com/blog/428620/201601/428620-20160113172919038-753154977.png" alt=""><br>这便引出了值类型和引用类型（这不是在说值传递）的最大区别：值类型用做参数会被复制，但是很多人误以为这个区别是值类型的特性。其实这是值传递带来的效果，和值类型本身没有关系。只是最终结果是这样。</p>
-<p><img src="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A52.png?raw=true" alt="求值策略区别"></p>
-<p>综上所述，对于JavaScript的函数调用方式最准确的描述是：参数藉由值传递方式，传递的值是个引用。（句中两个“值”不是一个意思，第一个值是evaluation result，第二个值是value content）由于这个描述太绕，对于Java，Python、Ruby、JavaScript等语言使用的这种求值策略，起了一个更贴切名字，叫Call by sharing。这个名字诞生于40年前。</p>
-<p>参考：<br>作者：Yolanda<br>链接：<a href="https://www.zhihu.com/question/31203609/answer/112157038" target="_blank" rel="noopener">https://www.zhihu.com/question/31203609/answer/112157038</a><br>来源：知乎</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setName(obj)&#123;        //可以这么来理解, 函数有一个局部变量obj, 然后接收person做参数, 将person的值赋给了obj变量. 因为person仅仅是存储了一个引用, obj也仅仅是一个引用。那么到了这个时候, 就有两个引用指向了person指向的对象(person和obj)。</span><br><span class="line">  obj.name = &quot;Ni&quot;;            //obj = new Object();让obj变量又指向了一个新生成的对象, 此时指向person所指对象的引用就只有一个了, 至此函数和person所指对象的关系完全断开。</span><br><span class="line">  obj = new Object();         //此时对obj的操作, 跟person所指对象一点关系都没有, 只是在操作这个新生成的对象而已。实际上，当在函数内部重写obj时，这个变量引用的就是一个局部对象了，而这个对象在函数执行结束后, 就被垃圾回收了。</span><br><span class="line">  boj.name = &quot;Ge&quot;;</span><br><span class="line">&#125;</span><br><span class="line">var person = new Object();    //person是一个引用类型变量, 存储了一个指向某个对象的引用。person指向的对象才是一个复杂数据类型, 他包括了属性, 方法等一系列东西。</span><br><span class="line">setName(person);</span><br><span class="line">console.log(person.name);    //&quot;Ni&quot;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——对值传递的一点理解/" data-id="cjg55agmy000byi35xrqbh6me" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ES6——Promise" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/ES6——Promise/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/ES6——Promise/">Promise</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Promise 是异步编程的一种解决方案，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。</p>
-</blockquote>
-<blockquote>
-<p>Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/ES6——Promise/" data-id="cjg55aglv0000yi35qkaakj51" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js-es6/">js es6</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-布局" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/布局/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/布局/">Css布局</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一侧定宽的两栏自适应布局——float"><a href="#一侧定宽的两栏自适应布局——float" class="headerlink" title="一侧定宽的两栏自适应布局——float"></a>一侧定宽的两栏自适应布局——float</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/</span><br><span class="line">HTML</span><br><span class="line">&lt;div class=&quot;twoColLayout&quot;&gt;</span><br><span class="line">  &lt;img src=&quot;1.jpg&quot;&gt;</span><br><span class="line">  &lt;p&gt;一段文字,...&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">/*margin具有流体特性下的改变尺寸特性，margin可以很方便实现很多流体布局*/</span><br><span class="line">CSS</span><br><span class="line">.twoColLayout&#123;overflow:hidden;&#125;</span><br><span class="line">.twoColLayout&gt;img&#123;float:legt;&#125;</span><br><span class="line">.twoColLayout&gt;p&#123;margin-left:130px;&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;twoColLayout&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;full&quot;&gt;</span><br><span class="line">    &lt;p&gt;一段文字,...&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;img src=&quot;1.jpg&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">/*当图片右侧定位，为了元素在DOM文档流中的前后顺序和视觉表现上前后顺序一致，借助margin负值*/</span><br><span class="line">.twoColLayout&#123;overflow:hidden;&#125;</span><br><span class="line">.full&#123;</span><br><span class="line">  width:100%;</span><br><span class="line">  float:left;</span><br><span class="line">  &#125;</span><br><span class="line">p&#123;margin-right:130px&#125;</span><br><span class="line">.twoColLayout&gt;img&#123;</span><br><span class="line">  float:left;</span><br><span class="line">  margin-left:-120px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="一侧定宽的两栏自适应布局——position"><a href="#一侧定宽的两栏自适应布局——position" class="headerlink" title="一侧定宽的两栏自适应布局——position"></a>一侧定宽的两栏自适应布局——position</h2><p>优点：任意排列元素，无须管HTML中出现的顺序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">nav &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0px;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">section &#123;</span><br><span class="line">  /* position is static by default */</span><br><span class="line">  margin-left: 200px;      &lt;!--绝对定位元素脱离文档流，会遮蔽其他元素--&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;#&quot;&gt;XXX&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;p&gt;XXX&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="三栏布局——float布局"><a href="#三栏布局——float布局" class="headerlink" title="三栏布局——float布局"></a>三栏布局——float布局</h2><ol>
-<li>两边固定宽度，中间宽度自适应。</li>
-</ol>
-<ul>
-<li>基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧</li>
-<li>元素浮动后，脱离文档流，后面的元素受浮动影响，设置受影响元素的margin值即可</li>
-<li>利用中间元素的margin值控制两边的间距</li>
-</ul>
-<p><strong>注意</strong>:宽度小于左右部分宽度之和时，右侧部分会被挤下去。</p>
-<p><strong>不足</strong>:div顺序不能改变，无法优先加载重要的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;left&quot;&gt;左侧&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;right&quot;&gt;右侧&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;middle&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    .wrap &#123;background: #eee; overflow: hidden; padding: 20px;&#125;  </span><br><span class="line">&lt;!-- 设置overflow:hidden，生成BFC，计算高度时考虑浮动元素。解决父元素高度塌陷问题 --&gt;</span><br><span class="line">    .left &#123;width: 200px; height: 50px; float: left; &#125;</span><br><span class="line">    .right &#123;width: 120px; height:  200px; float: right; &#125;</span><br><span class="line">    .middle &#123;margin-left: 220px;  margin-right: 140px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/布局/" data-id="cjg55agnd000myi3537c54rtc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/git/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/git/">git备忘</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>检查当前文件状态 git status/gst</li>
-<li>切分支 git checkout branchName</li>
-<li>添加到暂存区 git add .</li>
-<li>提交到本地 git commit -m’’</li>
-<li>提交到远端 git push [remote:origin] [branch]</li>
-<li>拉取远端代码并合并 git pull </li>
-<li>查看本地分支 git branch</li>
-<li>查看远程分支 git branch -r</li>
-<li>合并分支 git merge branchName</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/git/" data-id="cjg55agml0004yi35hv3tm8rt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-实用小例子" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/实用小例子/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##水平菜单<br>将li元素修改为行内元素，display：inline</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/实用小例子/" data-id="cjg55agn9000kyi351auqgj4o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js——事件处理程序" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/js——事件处理程序/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/js——事件处理程序/">JS事件处理程序</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览器。<h3 id="1-DOM0级事件处理程序"><a href="#1-DOM0级事件处理程序" class="headerlink" title="1.DOM0级事件处理程序"></a>1.DOM0级事件处理程序</h3><strong>1.1 指定事件处理程序</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">btn.onclick = function()&#123;alert(&quot;Hi!&quot;)&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>1.2 删除事件处理程序</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick = null;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-DOM2级事件处理程序"><a href="#2-DOM2级事件处理程序" class="headerlink" title="2.DOM2级事件处理程序"></a>2.DOM2级事件处理程序</h3><ul>
-<li>接收三个参数：要处理的事件名，作为事件处理程序的函数和一个布尔值（false表示在冒泡阶段调用事件处理程序，true表示在捕获阶段调用事件处理程序）</li>
-</ul>
-<p><strong>2.1 指定事件处理程序</strong></p>
-<ul>
-<li>优点：可以添加多个事件处理程序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">function handler()&#123;...&#125;;</span><br><span class="line">function myHandler(ele)&#123;...&#125;;</span><br><span class="line">btn.addEventListener(&quot;click&quot;,function()&#123;...&#125;,false);  //添加匿名函数</span><br><span class="line">btn.addEventListener(&quot;click&quot;,handler,false);     //通过函数名引用外部函数</span><br><span class="line">btn.addEventListener(&quot;click&quot;,function()&#123;myHandler(e);&#125;,false);    //通过 匿名函数 调用带参数的函数</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>2.2 删除事件处理程序</strong></p>
-<ul>
-<li>通过addEventListener()添加的事件处理程序只能通过removeEventListener()来移除。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btn.removeEventListener(&quot;click&quot;,function()&#123;...&#125;,false);     //无效！通过addEventListener()添加的匿名函数无法移除。(与传入的函数并非同一个)</span><br><span class="line">btn.removeEventListener(&quot;click&quot;,handler,false);             //有效！移除时传入的参数与添加处理程序时使用的参数相同。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>2.3 IE事件处理程序</strong></p>
-<ul>
-<li>通过attachEvent()添加事件处理程序，并且可以通过detachEvent()来移除。</li>
-<li>在IE中使用attachEvent()与DOM0级方法主要区别在于事件处理程序的作用域，此时为全局作用域，this等于window。</li>
-<li>与addEventListener()类似，也可以为一个元素添加多个事件处理程序。</li>
-<li>支持IE事件处理程序的浏览器有IE和Opera。</li>
-</ul>
-<p><strong>补充</strong>：以跨浏览器的方式处理程序，可以使用能够格力浏览器差异的JavaScript库。如果自己编写可以参考《Js高级程序设计》354页。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——事件处理程序/" data-id="cjg55agmu0008yi355ley1bpc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js——闭包" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/js——闭包/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/js——闭包/">js闭包</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function bindname(name)&#123;</span><br><span class="line">  return function(action)&#123;</span><br><span class="line">    console.log(`$&#123;name&#125; is $&#123;action&#125;ing);     //ES6字符串模板，此处用来实现变量拼接</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var b = bindname(&quot;xiaoming&quot;);           //声明赋值之后，相当于在函数bindname的上面写入了一个变量b，之后就可以对立面的函数进行操作。            </span><br><span class="line">b(&quot;eat&quot;);    //xiaoming is eating</span><br><span class="line">b(&quot;drink&quot;);      </span><br><span class="line">//大量使用的xiaoming不用每次都重复传入,又不会写死，下次还可以用xiaohong。</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——闭包/" data-id="cjg55agmw0009yi35ns5ks7jg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS——选择器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/CSS——选择器/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/CSS——选择器/">Css选择器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>RunJS 演示代码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"food"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        水果</span><br><span class="line">          <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            香蕉</span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        蔬菜</span><br><span class="line">          <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            白菜</span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>1、子选择器，即大于符号(&gt;),用于选择指定标签元素的<strong>第一代</strong>子元素(注意作用于第一代)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.food&gt;li&#123;</span><br><span class="line">  border: 1px red solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行结果如图<br><img src="https://user-images.githubusercontent.com/21055558/33794869-1acfa0c2-dd0f-11e7-96ab-93e9bf67934b.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.all&gt;li&#123;</span><br><span class="line">  border: 1px red solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行结果如图<br><img src="https://user-images.githubusercontent.com/21055558/33794924-499321da-dd10-11e7-9651-36f229012110.png" alt="2017-12-09 6 32 39"><br>2、后代选择器，即加入空格，用于选择指定标签元素下的后辈元素。（注意作用于所有后代）<br>运行结果如图<br><img src="https://user-images.githubusercontent.com/21055558/33794922-3aacc7b6-dd10-11e7-9b15-c3e459659bd3.png" alt="2017-12-09 6 38 39"><br>3、通用选择器，使用一个*指定，作用是匹配html中所有标签元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;color：red;&#125;    /*任意标签元素字体设置为红色*/</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/CSS——选择器/" data-id="cjg55agm50001yi35yez7peve" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/css/">css</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js——面向对象（this，new，继承）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/js——面向对象（this，new，继承）/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/js——面向对象（this，new，继承）/">JS面向对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="面向对象的三大特点："><a href="#面向对象的三大特点：" class="headerlink" title="面向对象的三大特点："></a>面向对象的三大特点：</h3><ul>
-<li>封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】</li>
-<li>继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】</li>
-<li>多态：让代码更灵活。</li>
-</ul>
-<h2 id="对象：某个特定引用类型的实例。"><a href="#对象：某个特定引用类型的实例。" class="headerlink" title="对象：某个特定引用类型的实例。"></a>对象：某个特定引用类型的实例。</h2><ul>
-<li>普通对象</li>
-<li>数组：下标为‘0’到‘length’的有序字符串</li>
-<li>函数</li>
-</ul>
-<h2 id="原型：理解为公有属性"><a href="#原型：理解为公有属性" class="headerlink" title="原型：理解为公有属性"></a>原型：理解为公有属性</h2><ul>
-<li>注意：访问<strong>proto</strong>会造成性能上的降低。</li>
-<li>函数和对象是没有关联的，一般来说this就表示调用它的这个对象。</li>
-<li>参数的值只有在传参的时候才能确定，this是第一个参数 =&gt; this的值只有的传参的时候才能确定</li>
-</ul>
-<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><h3 id="1-默认绑定"><a href="#1-默认绑定" class="headerlink" title="1.默认绑定"></a>1.默认绑定</h3><ul>
-<li>最常用的函数调用类型：独立函数调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this  //this是不确定的，浏览器下是window，node.js下是global，严格模式下是undefined</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">  console.log(this);  //this此时不确定，因为并未给函数a传参</span><br><span class="line">&#125;</span><br><span class="line">a()    //在浏览器中运行的，this的值是window（全局对象）</span><br><span class="line">       //在node.js中是global（全局对象）</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function a()&#123;</span><br><span class="line">  &quot;use strict&quot;</span><br><span class="line">  console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">a()     //undefined,因为是在严格模式下，浏览器不会帮忙去传参，此时没传参数，默认为undefined</span><br></pre></td></tr></table></figure>
-<h3 id="2-隐式绑定"><a href="#2-隐式绑定" class="headerlink" title="2.隐式绑定"></a>2.隐式绑定</h3><ul>
-<li><p>当函数引用有上下文对象时，隐式绑定规则会把函数调用中的this绑定到这个上下文对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;sayThis:a&#125;;</span><br><span class="line">obj.sayThis();      </span><br><span class="line">//函数被保存为对象的一个方法，当一个方法被调用时，this被绑定到该对象。</span><br><span class="line">//隐式传递，此时this就是调用它的对象，即obj。</span><br><span class="line">//方法可以使用this访问自己所属的对象，它能从对象中取值或对对象进行修改。this的绑定发生在调用时，这个延迟绑定使得函数可以对this高度服用。</span><br><span class="line">obj.sayThis.call();       //call显示传参，不会帮忙传参，需要自己去指定（第一个参数代表this），严格模式下，默认为undefined</span><br><span class="line">                          //call显示传参，如果传了this，在严格模式下，传什么是什么，非严格模式下，1会被转换成对象1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对象属性引用链中只有上一层或者说最后一层在调用位置中起作用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">  console.log(&quot;this.a&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var obj2 = &#123;</span><br><span class="line">  a:42;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  obj2:obj2;</span><br><span class="line">&#125;</span><br><span class="line">obj1.obj2.foo();     //42,this绑定的是obj2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>隐式丢失问题：即被隐式绑定的函数会丢失绑定对象，就会应用默认规则</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">  console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var bar = obj.foo;</span><br><span class="line">var a = &apos;global&apos;;</span><br><span class="line">bar();    //global,此时bar是obj.foo的一个引用，实际引用的是foo函数本身，所以此时bar()其实是一个不带任何修饰的函数调用，应用了默认绑定。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//传入回调函数情况</span><br><span class="line">function foo()&#123;</span><br><span class="line">  console.log(&quot;this.a&quot;);</span><br><span class="line">&#125;</span><br><span class="line">function doFoo(fn)&#123;</span><br><span class="line">  fn();</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;globle&quot;;</span><br><span class="line">doFoo(obj);   //globle,参数传递其实是一种隐式赋值，所以传入函数时也会被隐式赋值，与上一个例子结果一样。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//将函数传入语言内置函数情况</span><br><span class="line">function foo()&#123;</span><br><span class="line">  console.log(&quot;this.a&quot;);</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">  a:2;</span><br><span class="line">  foo:foo;</span><br><span class="line">&#125;</span><br><span class="line">var a = &quot;globle&quot;;</span><br><span class="line">setTimeout(obj.foo,100);   //global,注意该内置函数实现类似function setTimeout(fn,delay)&#123;fn();&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">显示绑定</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">button.onclick = function()&#123;</span><br><span class="line">  console.log(this);      </span><br><span class="line">  //如果是直接调用触发，this是button（虽然还没执行，但是文档中有写到），传递给指定事件的函数，函数内的this的值是触发事件的元素。</span><br><span class="line">  //如果使用call显示调用，this就是不确定的</span><br><span class="line">  this.disabled = true;     </span><br><span class="line">  var f=()=&gt;&#123;     </span><br><span class="line">    this.disabled = false;   //箭头函数内的this是确定的，与外部this相同，相当于禁用this，无法对其更改。但是外面的this（第三行代码）是函数内部的this，是不确定的。</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function creatSoldier()&#123;     //用一个函数来封装</span><br><span class="line">  var obj=&#123;      //模拟构造函数，最后需要返回一个对象</span><br><span class="line">    ID:i;</span><br><span class="line">    blood:42;</span><br><span class="line">  &#125;</span><br><span class="line"> obj. __proto__ = creatSoldier.prototype ;  </span><br><span class="line"> //写在obj外面，避免重复创建，占用内存</span><br><span class="line"> //注意：无论是__proto__，还是prototype，都只是一个名字，而已。</span><br><span class="line"> return obj; </span><br><span class="line">&#125;</span><br><span class="line">creatSoldier.prototype=&#123;      </span><br><span class="line">//此处不写成function soldier()&#123;&#125; ，而将其作为creatSoldier的一个属性，这样能将两者的依赖关系明确的表达出来，以免造成类似优化中当做无关内容误删或移动。</span><br><span class="line">//注意这里也可以叫creatSolider.xxx 中文理解 creatSolider.共有属性 。只是建议使用prototype（原型），是个约定。</span><br><span class="line">  兵种：”大兵“；</span><br><span class="line">  攻击行为：function()&#123;/*攻击行为代码*/&#125;；</span><br><span class="line">  前进行为：function()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var sodiers = [];</span><br><span class="line">for(var i=0;i&lt;=100;i++)&#123;</span><br><span class="line">  Array.propotype.push.call(sodliers,creatSolider().call())  //等价于sodliers.push(creatSolider())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>new帮忙做三件事</strong></p>
-<p>(1)js已经帮忙初始化一个空对象this，不需要自己去想变量名</p>
-<p>(2)帮忙创建好obj. <strong>proto</strong> = creatSoldier.prototype, 同时会为其自动创建constructor属性，表述了所有的实例都是由creatSoldier创建的。</p>
-<p>(3)已经帮忙返回this，不需要自己去写。如果自己写了return,如return {}，js会帮忙<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//用new来创建</span><br><span class="line">//注意区别</span><br><span class="line">function creatSoldier(name)&#123;</span><br><span class="line">  //this = &#123;&#125;;</span><br><span class="line">  //this.__proto__ = creatSoldier.prototype;</span><br><span class="line">  this.ID=i;</span><br><span class="line">  this.blood=42;</span><br><span class="line">  this.name=name||&quot;无名战士&quot;;</span><br><span class="line">  //return this</span><br><span class="line">&#125;</span><br><span class="line">//注意creatSoldier.prototype内已有一个默认属性constructor，此时如果我们重写creatSoldier.prototype会覆盖原有属性。（=号的含义就是将右侧的值复制到左边，存储了新的地址，改变了关联）</span><br><span class="line">//方法一，重写一般该属性</span><br><span class="line">creatSoldier.prototype = &#123;  </span><br><span class="line">  constructor:creatSoldier;     </span><br><span class="line">  兵种:&quot;大兵&quot;;</span><br><span class="line">  攻击行为:function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">  前进行为:function()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line">//方法二，逐个添加，更常用</span><br><span class="line">creatSoldier.prototype.兵种 = &quot;大兵&quot;；</span><br><span class="line">creatSoldier.prototype.攻击行为 = function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">creatSoldier.prototype.前进行为: = function()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">var sodiers = [];</span><br><span class="line">for(var i=0;i&lt;=100;i++)&#123;</span><br><span class="line">  sodliers.push(new creatSolider());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>约定俗成的一些事：</li>
-</ul>
-<ol>
-<li>构造函数首字母大写 CreatSoldier</li>
-<li>构造函数省略creat 因为new已经代表了creat的意思 Solider</li>
-<li>如果构造函数没有参数，可以省略括号 sodliers.push(new Solider)</li>
-</ol>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function Human(options)&#123;</span><br><span class="line">  this.name = options.name;</span><br><span class="line">  this.肤色 = options.肤色;</span><br><span class="line">&#125;</span><br><span class="line">Human.prototype.eat = function()&#123;...&#125;;</span><br><span class="line">Human.prototype.drink = function()&#123;...&#125;;</span><br><span class="line"></span><br><span class="line">function Soldier(options)&#123;</span><br><span class="line">  Human.call(this,options);    //继承Human特有属性（调用时先让Human去帮忙初始化）</span><br><span class="line">  this.ID = options.ID;</span><br><span class="line">  this.blood=42;     </span><br><span class="line">  //js已帮忙写好this.__proto__=Soldier.prototype,作用是将空对象连接上共有属性</span><br><span class="line">&#125;</span><br><span class="line">Soldier.prototype.兵种 = &quot;大兵&quot;；</span><br><span class="line">Soldier.prototype.攻击行为 = function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">Soldier.prototype.前进行为 = function()&#123;&#125;;</span><br><span class="line">Soldier.__proto__ = Human.prototype;     //继承Human共有属性</span><br><span class="line"></span><br><span class="line">var s = new Solider(&#123;name:&apos;F&apos;,肤色:&apos;黄&apos;,ID:1&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="注意：proto不能用，会降低性能。"><a href="#注意：proto不能用，会降低性能。" class="headerlink" title="注意：proto不能用，会降低性能。"></a>注意：<strong>proto</strong>不能用，会降低性能。</h3><h3 id="基于原型链"><a href="#基于原型链" class="headerlink" title="基于原型链"></a>基于原型链</h3><ul>
-<li>方法一：兼容IE，所以要实现<code>Soldier.__proto__ = Human.prototype;</code>，ES3方法是用如下三行代码替代:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function fakeHuman()&#123;&#125;;</span><br><span class="line">fakeHuman.prototype = Human.prototype;</span><br><span class="line">Soldier.prototype = new fakeHuman();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function X()&#123;</span><br><span class="line">  //this = &#123;&#125;;</span><br><span class="line">  //this.__proto__ = X.prototype;</span><br><span class="line">  //return this;</span><br><span class="line">&#125;;</span><br><span class="line">Soldier.prototype = new X();</span><br><span class="line">//相当于Soldier.prototype.__proto__ === this.__proto__ === X.prototype</span><br><span class="line">//可以观察到X就相当于Human,但是原本的Huamn是拥有特有属性的，如果直接使用原有的Human,会将Human内的私用属性返回;也不能创建同名空函数。</span><br><span class="line">//综上，我们需要创建一个假的Human函数保存Human.prototype,由此得到了以上三行替代代码。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>方法二：不兼容IE，更常用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Soldier.prototype = Object.creat(Human.prototype);     //create可以用来指定原型</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="基于class，模仿java"><a href="#基于class，模仿java" class="headerlink" title="基于class，模仿java"></a>基于class，模仿java</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Human&#123;</span><br><span class="line">  construtor(options)&#123;</span><br><span class="line">    this.name = options.name;</span><br><span class="line">    this.肤色 = options.肤色;</span><br><span class="line">  &#125;</span><br><span class="line">  eat()&#123;&#125;;        //Human.prototype.eat = function()&#123;...&#125;;</span><br><span class="line">  drink()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Soldier extends Human&#123;   //extends 只继承共有属性，相当于对原型链的扩展，特有属性需要用super</span><br><span class="line">  constructor&#123;</span><br><span class="line">    super(options);          //super意思是用父类去构造，调用了一下Human(不过要注意此时Human已经变成了一个类，是不能作为函数执行的，所以用了super，代替了Human.call(this,options)）。</span><br><span class="line">    this.ID = options.ID;</span><br><span class="line">    this.blood=42; </span><br><span class="line">    this.兵种 = &quot;大兵&quot;;    //注意：新的语法有一个缺点，共有属性是不支持非函数的，只能写在特有属性里。</span><br><span class="line">  &#125;    </span><br><span class="line">  攻击行为();</span><br><span class="line">  前进行为();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Soldier.prototype.攻击行为 = function()&#123;/*攻击行为代码*/&#125;;</span><br><span class="line">Soldier.prototype.前进行为 = function()&#123;&#125;;</span><br><span class="line">Soldier.__proto__ = Human.prototype;     //继承Human共有属性</span><br><span class="line"></span><br><span class="line">var s = new Solider(&#123;name:&apos;F&apos;,肤色:&apos;黄&apos;,ID:1&#125;);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js——面向对象（this，new，继承）/" data-id="cjg55agn1000dyi35jnn9asn1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js基础——常用互动方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2018/04/18/js基础——常用互动方法/" class="article-date">
-  <time datetime="2018-04-18T13:24:19.000Z" itemprop="datePublished">2018-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/04/18/js基础——常用互动方法/">js基础学习</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot"><a href="#1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot" class="headerlink" title="1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);"></a>1. <code>document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);</code></h3><h3 id="2-alert-quot-消息对话框-quot"><a href="#2-alert-quot-消息对话框-quot" class="headerlink" title="2. alert(&quot;消息对话框&quot;);"></a>2. <code>alert(&quot;消息对话框&quot;);</code></h3><ul>
-<li>与<code>document.write</code>类似，输出内容可以是变量，可以是字符串；</li>
-<li>常用于调试程序</li>
-<li>在点击对话框”确定”按钮前，不能进行任何其它操作。<h3 id="3-confirm-str"><a href="#3-confirm-str" class="headerlink" title="3. confirm(str);"></a>3. <code>confirm(str);</code></h3></li>
-</ul>
-<p><em>str：在消息对话框中要显示的文本</em></p>
-<p><em>返回值: Boolean值</em></p>
-<p><em>当用户点击”确定”按钮时，返回true</em></p>
-<p><em>当用户点击”取消”按钮时，返回false</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  function rec()&#123;</span><br><span class="line">    var mymessage=confirm(&quot;你喜欢JavaScript吗?&quot;);</span><br><span class="line">    if(mymessage==true)</span><br><span class="line">    &#123;   document.write(&quot;很好,加油!&quot;);   &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;  document.write(&quot;JS功能强大，要学习噢!&quot;);   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input name=&quot;button&quot; type=&quot;button&quot; onClick=&quot;rec()&quot; value=&quot;点击我，弹出确认对话框&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>消息对话框是排它的，即用户在点击对话框按钮前，不能进行任何其它操作。<h3 id="4-prompt-str1-str2"><a href="#4-prompt-str1-str2" class="headerlink" title="4. prompt(str1, str2);"></a>4. <code>prompt(str1, str2);</code></h3></li>
-</ul>
-<p><em>str1: 要显示在消息对话框中的文本，不可修改</em></p>
-<p><em>str2：文本框中的内容，可以修改</em></p>
-<p><em>点击确定按钮，文本框中的内容将作为函数返回值</em></p>
-<p><em>点击取消按钮，将返回null</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  function rec()&#123;</span><br><span class="line">	var score; //score变量，用来存储用户输入的成绩值。</span><br><span class="line">	score =  prompt(&quot;请输入你的成绩&quot;)              ;</span><br><span class="line">	if(score&gt;=90)</span><br><span class="line">	&#123;</span><br><span class="line">	   document.write(&quot;你很棒!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(score&gt;=75)</span><br><span class="line">    &#123;</span><br><span class="line">	   document.write(&quot;不错吆!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(score&gt;=60)</span><br><span class="line">    &#123;</span><br><span class="line">	   document.write(&quot;要加油!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">	&#123;</span><br><span class="line">       document.write(&quot;要努力了!&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input name=&quot;button&quot; type=&quot;button&quot; onClick=&quot;rec()&quot; value=&quot;点击我，对成绩做评价!&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>在用户点击对话框的按钮前，不能进行任何其它操作。<h3 id="5-window-open-URL-窗口名称-参数字符串"><a href="#5-window-open-URL-窗口名称-参数字符串" class="headerlink" title="5. window.open([URL], [窗口名称], [参数字符串])"></a>5. <code>window.open([URL], [窗口名称], [参数字符串])</code></h3></li>
-</ul>
-<p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
-<p>URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。</p>
-<p>窗口名称：可选参数，被打开窗口的名称。</p>
-<p>（1）该名称由字母、数字和下划线字符组成。</p>
-<p>（2）”_top”、”_blank”、”_self”具有特殊意义的名称。</p>
-<p>_blank：在新窗口显示目标网页</p>
-<p>_self：在当前窗口显示目标网页</p>
-<p>_top：框架网页中在上部窗口中显示目标网页</p>
-<p>（3）相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。</p>
-<p>（4）name 不能包含有空格。</p>
-<p>参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。</p>
-<p><img src="http://img.mukewang.com/52e3677900013d6a05020261.jpg" alt="参数表"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; window.open(&apos;http://www.imooc.com&apos;,&apos;_blank&apos;,&apos;width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes&apos;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>注意：运行结果考虑浏览器兼容问题。<h3 id="6-close-关闭窗口"><a href="#6-close-关闭窗口" class="headerlink" title="6. close()关闭窗口"></a>6. <code>close()</code>关闭窗口</h3></li>
-</ul>
-<p><code>window.close();</code>   //关闭本窗口</p>
-<p><code>&lt;窗口对象&gt;.close();</code>   //关闭指定的窗口<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--本段代码在打开新窗口的同时，关闭该窗口，看不到被打开的窗口。--&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">   var mywin=window.open(&apos;http://www.imooc.com&apos;); //将新打的窗口对象，存储在变量mywin中</span><br><span class="line">   mywin.close();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://sofiaying.github.io/blog/2018/04/18/js基础——常用互动方法/" data-id="cjg55agn4000fyi35k2rec9by" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js-es6/">js es6</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/blog/tags/css/" style="font-size: 15px;">css</a> <a href="/blog/tags/git/" style="font-size: 10px;">git</a> <a href="/blog/tags/html/" style="font-size: 10px;">html</a> <a href="/blog/tags/js/" style="font-size: 20px;">js</a> <a href="/blog/tags/js-es6/" style="font-size: 10px;">js es6</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
+          <li class="menu-item">
+            
+              <a href="/blog/" class="menu-link">Home</a>
+            
           </li>
         
-          <li>
-            <a href="/blog/2018/04/18/ES6——Promise/">Promise</a>
+          <li class="menu-item">
+            
+              <a href="/blog/tags/" class="menu-link">Tags</a>
+            
           </li>
         
-          <li>
-            <a href="/blog/2018/04/18/布局/">Css布局</a>
+          <li class="menu-item">
+            
+              <a href="/blog/archives/" class="menu-link">Archives</a>
+            
           </li>
         
-          <li>
-            <a href="/blog/2018/04/18/git/">git备忘</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2018/04/18/实用小例子/">(no title)</a>
+          <li class="menu-item">
+            
+              <a href="/blog/about/" class="menu-link">About</a>
+            
           </li>
         
       </ul>
     </div>
   </div>
+</header>
 
+    <main class="app-body">
   
-</aside>
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/git/">git备忘</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#git" >
+    <span class="tag-code">git</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+检查当前文件状态 git status/gst
+切分支 git checkout branchName
+添加到暂存区 git add .
+提交到本地 git commit -m’’
+提交到远端 git push [remote:origin] [branch]
+拉取远端代码并合并 git  ...
         
       </div>
-      <footer id="footer">
+      <a class="more" href="/blog/2018/04/18/git/">Read more</a>
+    </article>
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Sofia Ying<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/布局相关——实用小栗子/">布局实用小栗子</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#css" >
+    <span class="tag-code">css</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          块级元素垂直居中对齐方式——绝对定位元素margin:auto居中margin:auto填充规则：
+
+如果一侧定值，一侧auto，则auto为剩余空间大小
+如果两次均为auto，则平均分配剩余空间
+
+触发margin:auto计算有一个前提条件：width或height为auto时，元素具有 ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/布局相关——实用小栗子/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/CSS——选择器/">Css选择器</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#css" >
+    <span class="tag-code">css</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          1234567891011121314151617181920212223242526272829&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DT ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/CSS——选择器/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScrip ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/js——对值传递的一点理解/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/js——闭包/">js闭包</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          12345678910function bindname(name)&#123;  return function(action)&#123;    console.log(`$&#123;name&#125; is $&#123;action&#125;ing);     //ES6字符串 ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/js——闭包/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/js——事件处理程序/">JS事件处理程序</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览器。1.DOM0级事件处理程序1.1 指定事件处理程序12var btn = document.getElementById(&quot;myBtn&quot;);btn.onclick = functi ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/js——事件处理程序/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/ES6——Promise/">Promise</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#ES6" >
+    <span class="tag-code">ES6</span>
+  </a>
+
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+Promise 是异步编程的一种解决方案，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。
+
+
+Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种 ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/ES6——Promise/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/js基础——常用互动方法/">js基础学习</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);2. alert(&quot;消息对话框&quot;);
+与document.write类似，输出内容可以是变量，可以是字符串；
+常用于调试程序
+在点击对 ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/js基础——常用互动方法/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/实用小例子/"></a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+      <div class="article-summary">
+        
+          ##水平菜单将li元素修改为行内元素，display：inline
+
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/实用小例子/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/js——面向对象（this，new，继承）/">JS面向对象</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          面向对象的三大特点：
+封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】
+继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】
+多态：让代码更灵活。
+
+对象：某个特定引用类型的实例。
+普通对象
+数组：下标为‘0’到‘lengt ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/js——面向对象（this，new，继承）/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a class="unvisible" href="/blog/"><span class="page-arrow">←</span> Prev</a>
+  
+  
+    <a href="/blog/page/2/">Next<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/blog/" class="mobile-nav-link">Home</a>
-  
-    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
 
-
-  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
-  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
-
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
 
 <script src="/blog/js/script.js"></script>
-
-
-
-  </div>
-</body>
+  </body>
 </html>
