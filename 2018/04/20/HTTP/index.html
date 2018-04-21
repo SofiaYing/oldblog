@@ -149,7 +149,7 @@
   <article class="post-article">
     <section class="markdown-content"><h2 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(HyperText Transfer Protocol)</h2><p>超文本传输协议，客户端如何请求及服务器如何响应</p>
 <h3 id="一、请求"><a href="#一、请求" class="headerlink" title="一、请求"></a>一、请求</h3><blockquote>
-<p>GET与POST区别</p>
+<p>（一）GET与POST区别</p>
 </blockquote>
 <ul>
 <li>GET：获取资源</li>
@@ -179,7 +179,7 @@
 <p>顾名思义就是一个方法是否可以被缓存，此RFC里GET，HEAD和某些情况下的POST都是可缓存的，但是绝大多数的浏览器的实现里仅仅支持GET和HEAD。关于缓存的更多内容可以去看RFC7234。在这三个特性里一直在强调同一个事情，那就是协议不等于实现：协议规定安全在实现里不一定安全，协议规定幂等在实现里不一定幂等，协议规定可缓存在实现里不一定可缓存。</p>
 <p>这里参考了一篇文章：<br>作者：杨光<br>链接：<a href="https://www.zhihu.com/question/28586791/answer/145424285" target="_blank" rel="noopener">https://www.zhihu.com/question/28586791/answer/145424285</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。）</p>
 <blockquote>
-<p>请求格式</p>
+<p>（二）GET和POST请求格式</p>
 </blockquote>
 <ul>
 <li>GET请求</li>
@@ -198,17 +198,42 @@
 <p>Content-Length: …</p>
 <p>username=pyz&amp;password=123（第四部分服务器返回的是字符串）</p>
 <p>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</p>
-<h3 id="二、状态码"><a href="#二、状态码" class="headerlink" title="二、状态码"></a>二、状态码</h3><blockquote>
+<blockquote>
+<p>（三）Cookie</p>
+<ul>
+<li>HTTP无状态协议，不对之前发生过的请求和响应的状态进行管理。</li>
+</ul>
+</blockquote>
+<p>缺点：如需保持登录状态的情况。</p>
+<p>优点：减少服务器CPU及内存资源消耗。也因为简单才会应用在各种场景。</p>
+<p><code>过程</code></p>
+<p>① 无Cookie信息状态下的请求，请求报文没有Cookie信息的状态</p>
+<p>② 响应报文，服务器端生成Cookie信息。Cookie会根据服务器端发送的响应报文内的Set-Cookie首部字段，通知客户端保存Cookie。</p>
+<p>③ 再次发送请求时，会在请求报文中加入Cookie值，服务器会据此检查哪一个客户端发来的请求，对比服务器上的记录，最后得到之前的状态。</p>
+<h3 id="二、状态码"><a href="#二、状态码" class="headerlink" title="二、状态码"></a>二、状态码</h3><p>状态码职责是当客户端向服务器发送请求时，描述返回的请求结果。</p>
+<blockquote>
 <p>2xx 成功状态码 请求正常处理完毕</p>
 <ol>
-<li>200 —— 成功</li>
+<li>200 —— OK，表示从客户端发来的请求在服务器端正常处理了</li>
 </ol>
 <ul>
 <li>GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。</li>
 <li>POST：返回处理对应请求的结果。</li>
 </ul>
 <ol start="2">
-<li>204 —— 成功处理请求，没有返回任何内容.</li>
+<li>204 —— No Content,成功处理请求，但是服务器不需要返回响应。比如，客户端是浏览器的话，那么浏览器显示的页面不会发生更新。</li>
+<li>206 —— Partial Content,客户端进行了范围请求，（对资源某一部分的请求），服务器成功执行了这部分的GET请求。响应报文中包含由Content-Range指定的范围的实体内容。<br>3xx 重定向状态码 需要进行附加操作以完成请求</li>
+<li>301 —— Moved Permanently,永久性重定向。即请求的资源已被分配了新的URI。如果保存了书签，会更新书签的引用。</li>
+<li>302 —— Found,临时性重定向。希望用户（本次）能使用新的URI访问。不会像301那样去更新书签。</li>
+<li>303 —— See Other,与302类似，但是明确表示客户端采用GET方法定向获取请求的资源，而302是不会改变上次的请求方法的。</li>
+<li>304 —— Not Modified，客户端发送附带条件的请求，服务器端允许请求访问资源，但因请求未满足条件，访问不了，并返回和上次一样的话,表示资源未被修改过，还是和上次访问时一样。</li>
+<li>307 —— Temporary Redirect,临时重定向。与302含义相同，302标准禁止将POST更改为GET，但实际中大家都会更改，307则不进行要求。<br>4xx 客户端错误状态码 服务器无法处理请求</li>
+<li>400 —— Bad Request,请求报文中存在语法错误，客户端需要修改请求内容后再次发送。</li>
+<li>401 —— Unauthorized,表示发送的请求需要有通过HTTP认证的认证信息。即用户没有必要的凭据。该状态码表示当前请求需要用户验证。</li>
+<li>403 —— Forbidden，服务器已经理解请求，但是拒绝执行它。</li>
+<li>404 —— Not Found,服务器无法找到请求资源，也可用户服务器端拒绝请求而不像说明理由时使用。<br>5xx 服务器错误状态码 服务器处理请求出错</li>
+<li>500 —— Internal Server Error,服务器端执行请求时发生了错误，也可能是Web应用存在的bug或某些临时故障。</li>
+<li>503 —— Service Unavailable，由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的。</li>
 </ol>
 </blockquote>
 </section>
