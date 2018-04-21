@@ -10,7 +10,7 @@
   
   <title>
     
-      git备忘 | Sofia&#39;s Blog
+      常用命令行及git备忘 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>git备忘</h2>
+  <h2>常用命令行及git备忘</h2>
   <p class="post-date">2018-04-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,7 +147,19 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><ul>
+    <section class="markdown-content"><h3 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h3><ul>
+<li>mkdir    创建目录</li>
+<li>touch    创建文件</li>
+<li>echo    echo “s” &gt; c:\file.txt    创建文件file.txt</li>
+<li>echo “s” &gt;! file.txt    覆盖file.txt</li>
+<li>rm    remove    删除</li>
+<li>mv    move    重命名</li>
+<li>cp    copy    复制</li>
+<li>ls    list 显示当前目录下所有文件</li>
+<li>ls -a    显示隐藏文件</li>
+<li>cd    change directory    改变目录</li>
+</ul>
+<h3 id="git备忘"><a href="#git备忘" class="headerlink" title="git备忘"></a>git备忘</h3><ul>
 <li>检查当前文件状态 git status/gst</li>
 <li>切分支 git checkout branchName</li>
 <li>添加到暂存区 git add .</li>
@@ -176,17 +188,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/实用小例子/">
+      <a class="nav-left" href="/blog/2018/04/18/ES6——Promise/">
         <span class="nav-arrow">← </span>
         
-          (untitled)
+          Promise
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/18/布局/">
+      <a class="nav-right" href="/blog/2018/04/20/数组/">
         
-          Css布局
+          数组
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -235,7 +247,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="nav">none</ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#常用命令行"><span class="toc-nav-text">常用命令行</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git备忘"><span class="toc-nav-text">git备忘</span></a></li></ol>
     
   </div>
 </aside>
@@ -301,7 +313,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "git备忘",
+        id: "常用命令行及git备忘",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

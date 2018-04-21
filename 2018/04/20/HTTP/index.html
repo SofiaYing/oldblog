@@ -10,7 +10,7 @@
   
   <title>
     
-      JS事件处理程序 | Sofia&#39;s Blog
+      HTTP | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>JS事件处理程序</h2>
-  <p class="post-date">2018-04-18</p>
+  <h2>HTTP</h2>
+  <p class="post-date">2018-04-20</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,43 +147,72 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><ul>
-<li>大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览器。<h3 id="1-DOM0级事件处理程序"><a href="#1-DOM0级事件处理程序" class="headerlink" title="1.DOM0级事件处理程序"></a>1.DOM0级事件处理程序</h3><strong>1.1 指定事件处理程序</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">btn.onclick = function()&#123;alert(&quot;Hi!&quot;)&#125;;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>1.2 删除事件处理程序</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick = null;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-DOM2级事件处理程序"><a href="#2-DOM2级事件处理程序" class="headerlink" title="2.DOM2级事件处理程序"></a>2.DOM2级事件处理程序</h3><ul>
-<li>接收三个参数：要处理的事件名，作为事件处理程序的函数和一个布尔值（false表示在冒泡阶段调用事件处理程序，true表示在捕获阶段调用事件处理程序）</li>
-</ul>
-<p><strong>2.1 指定事件处理程序</strong></p>
+    <section class="markdown-content"><h2 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(HyperText Transfer Protocol)</h2><p>超文本传输协议，客户端如何请求及服务器如何响应</p>
+<h3 id="一、请求"><a href="#一、请求" class="headerlink" title="一、请求"></a>一、请求</h3><blockquote>
+<p>GET与POST区别</p>
+</blockquote>
 <ul>
-<li>优点：可以添加多个事件处理程序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var btn = document.getElementById(&quot;myBtn&quot;);</span><br><span class="line">function handler()&#123;...&#125;;</span><br><span class="line">function myHandler(ele)&#123;...&#125;;</span><br><span class="line">btn.addEventListener(&quot;click&quot;,function()&#123;...&#125;,false);  //添加匿名函数</span><br><span class="line">btn.addEventListener(&quot;click&quot;,handler,false);     //通过函数名引用外部函数</span><br><span class="line">btn.addEventListener(&quot;click&quot;,function()&#123;myHandler(e);&#125;,false);    //通过 匿名函数 调用带参数的函数</span><br></pre></td></tr></table></figure>
-</li>
+<li>GET：获取资源</li>
 </ul>
-<p><strong>2.2 删除事件处理程序</strong></p>
+<p>用来请求访问已被URI识别的资源。如果请求的资源是文本，就保持原样返回。如果是CGI（通用网关接口）那样的程序，则返回经过执行后的输出结果。</p>
+<p>GET的语义是请求获取指定的资源。GET方法是安全、幂等、可缓存的（除非有 Cache-ControlHeader的约束）,GET方法的报文主体没有任何语义。</p>
 <ul>
-<li>通过addEventListener()添加的事件处理程序只能通过removeEventListener()来移除。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">btn.removeEventListener(&quot;click&quot;,function()&#123;...&#125;,false);     //无效！通过addEventListener()添加的匿名函数无法移除。(与传入的函数并非同一个)</span><br><span class="line">btn.removeEventListener(&quot;click&quot;,handler,false);             //有效！移除时传入的参数与添加处理程序时使用的参数相同。</span><br></pre></td></tr></table></figure>
-</li>
+<li>POST：传输实体主体</li>
 </ul>
-<p><strong>2.3 IE事件处理程序</strong></p>
+<p>POST功能与GET相似，但POST的主要目的不是获取响应的主体内容。并且一般也不用GET来传输实体主题。</p>
+<p>POST的语义是根据请求负荷（报文主体）对指定的资源做出处理，具体的处理方式视资源类型而不同。POST不安全，不幂等，（大部分实现）不可缓存。为了针对其不可缓存性，有一系列的方法来进行优化。</p>
 <ul>
-<li>通过attachEvent()添加事件处理程序，并且可以通过detachEvent()来移除。</li>
-<li>在IE中使用attachEvent()与DOM0级方法主要区别在于事件处理程序的作用域，此时为全局作用域，this等于window。</li>
-<li>与addEventListener()类似，也可以为一个元素添加多个事件处理程序。</li>
-<li>支持IE事件处理程序的浏览器有IE和Opera。</li>
+<li>栗子：在微博这个场景里，GET的语义会被用在「看看我的Timeline上最新的20条微博」这样的场景，而POST的语义会被用在「发微博、评论、点赞」这样的场景中。</li>
 </ul>
-<p><strong>补充</strong>：以跨浏览器的方式处理程序，可以使用能够格力浏览器差异的JavaScript库。如果自己编写可以参考《Js高级程序设计》354页。</p>
+<p><span style="border-bottom:2px solid pink;">RFC7231里定义了HTTP方法的几个性质：</span></p>
+<ol>
+<li>Safe - 安全</li>
+</ol>
+<p>这里的「安全」和通常理解的「安全」意义不同，如果一个方法的语义在本质上是「只读」的，那么这个方法就是安全的。客户端向服务端的资源发起的请求如果使用了是安全的方法，就不应该引起服务端任何的状态变化，因此也是无害的。 此RFC定义，GET, HEAD, OPTIONS 和 TRACE 这几个方法是安全的。但是这个定义只是规范，并不能保证方法的实现也是安全的，服务端的实现可能会不符合方法语义，正如上文说过的使用GET修改用户信息的情况。引入安全这个概念的目的是为了方便网络爬虫和缓存，以免调用或者缓存某些不安全方法时引起某些意外的后果。User Agent（浏览器）应该在执行安全和不安全方法时做出区分对待，并给用户以提示。</p>
+<ol start="2">
+<li>Idempotent - 幂等</li>
+</ol>
+<p>幂等的概念是指同一个请求方法执行多次和仅执行一次的效果完全相同。按照RFC规范，PUT，DELETE和安全方法都是幂等的。同样，这也仅仅是规范，服务端实现是否幂等是无法确保的。引入幂等主要是为了处理同一个请求重复发送的情况，比如在请求响应前失去连接，如果方法是幂等的，就可以放心地重发一次请求。这也是浏览器在后退/刷新时遇到POST会给用户提示的原因：POST语义不是幂等的，重复请求可能会带来意想不到的后果。</p>
+<ol start="3">
+<li>Cacheable - 可缓存性 </li>
+</ol>
+<p>顾名思义就是一个方法是否可以被缓存，此RFC里GET，HEAD和某些情况下的POST都是可缓存的，但是绝大多数的浏览器的实现里仅仅支持GET和HEAD。关于缓存的更多内容可以去看RFC7234。在这三个特性里一直在强调同一个事情，那就是协议不等于实现：协议规定安全在实现里不一定安全，协议规定幂等在实现里不一定幂等，协议规定可缓存在实现里不一定可缓存。</p>
+<p>这里参考了一篇文章：<br>作者：杨光<br>链接：<a href="https://www.zhihu.com/question/28586791/answer/145424285" target="_blank" rel="noopener">https://www.zhihu.com/question/28586791/answer/145424285</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。）</p>
+<blockquote>
+<p>请求格式</p>
+</blockquote>
+<ul>
+<li>GET请求</li>
+</ul>
+<p>GET / HTTP/1.1</p>
+<p>Host: baidu.com</p>
+<p>空行</p>
+<p>Accept: text/html</p>
+<ul>
+<li>POST请求</li>
+</ul>
+<p>POST /login HTTP/1.1</p>
+<p>Host: baidu.com</p>
+<p>Accept: application/json</p>
+<p>Content-Type: application/x-www-form-urlencoded</p>
+<p>Content-Length: …</p>
+<p>username=pyz&amp;password=123（第四部分服务器返回的是字符串）</p>
+<p>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</p>
+<h3 id="二、状态码"><a href="#二、状态码" class="headerlink" title="二、状态码"></a>二、状态码</h3><blockquote>
+<p>2xx 成功状态码 请求正常处理完毕</p>
+<ol>
+<li>200 —— 成功</li>
+</ol>
+<ul>
+<li>GET：请求的对应资源会作为响应返回。响应将包含描述或操作的结果。</li>
+<li>POST：返回处理对应请求的结果。</li>
+</ul>
+<ol start="2">
+<li>204 —— 成功处理请求，没有返回任何内容.</li>
+</ol>
+</blockquote>
 </section>
     <!-- Tags START -->
-    
-      <div class="tags">
-        <span>Tags:</span>
-        
-  <a href="/blog/blog/tags#js" >
-    <span class="tag-code">js</span>
-  </a>
-
-      </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -191,17 +220,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/布局/">
+      <a class="nav-left" href="/blog/2018/04/20/数组/">
         <span class="nav-arrow">← </span>
         
-          Css布局
+          数组
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/18/js——闭包/">
+      <a class="nav-right" href="/blog/2018/04/21/markdown语法备忘/">
         
-          js闭包
+          markdown语法备忘
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -250,7 +279,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-DOM0级事件处理程序"><span class="toc-nav-text">1.DOM0级事件处理程序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-DOM2级事件处理程序"><span class="toc-nav-text">2.DOM2级事件处理程序</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTTP-HyperText-Transfer-Protocol"><span class="toc-nav-text">HTTP(HyperText Transfer Protocol)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一、请求"><span class="toc-nav-text">一、请求</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二、状态码"><span class="toc-nav-text">二、状态码</span></a></li></ol></li></ol>
     
   </div>
 </aside>
@@ -260,7 +289,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/18/js——事件处理程序/';
+    var url = 'https://sofiaying.github.io/blog/2018/04/20/HTTP/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -316,7 +345,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "JS事件处理程序",
+        id: "HTTP",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

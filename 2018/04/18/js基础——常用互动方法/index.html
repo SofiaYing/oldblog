@@ -10,7 +10,7 @@
   
   <title>
     
-      js基础学习 | Sofia&#39;s Blog
+      BOM（Browser Object Mode） | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>js基础学习</h2>
+  <h2>BOM（Browser Object Mode）</h2>
   <p class="post-date">2018-04-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,7 +147,8 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot"><a href="#1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot" class="headerlink" title="1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);"></a>1. <code>document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);</code></h3><h3 id="2-alert-quot-消息对话框-quot"><a href="#2-alert-quot-消息对话框-quot" class="headerlink" title="2. alert(&quot;消息对话框&quot;);"></a>2. <code>alert(&quot;消息对话框&quot;);</code></h3><ul>
+    <section class="markdown-content"><h2 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h2><p>window对象的一个属性，可以用来处理页面文档</p>
+<h3 id="1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot"><a href="#1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot" class="headerlink" title="1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);"></a>1. <code>document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);</code></h3><h2 id="弹框类"><a href="#弹框类" class="headerlink" title="弹框类"></a>弹框类</h2><h3 id="2-alert-quot-消息对话框-quot"><a href="#2-alert-quot-消息对话框-quot" class="headerlink" title="2. alert(&quot;消息对话框&quot;);"></a>2. <code>alert(&quot;消息对话框&quot;);</code></h3><ul>
 <li>与<code>document.write</code>类似，输出内容可以是变量，可以是字符串；</li>
 <li>常用于调试程序</li>
 <li>在点击对话框”确定”按钮前，不能进行任何其它操作。<h3 id="3-confirm-str"><a href="#3-confirm-str" class="headerlink" title="3. confirm(str);"></a>3. <code>confirm(str);</code></h3></li>
@@ -260,7 +261,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot"><span class="toc-nav-text">1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-alert-quot-消息对话框-quot"><span class="toc-nav-text">2. alert(&quot;消息对话框&quot;);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-confirm-str"><span class="toc-nav-text">3. confirm(str);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-prompt-str1-str2"><span class="toc-nav-text">4. prompt(str1, str2);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-window-open-URL-窗口名称-参数字符串"><span class="toc-nav-text">5. window.open([URL], [窗口名称], [参数字符串])</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-close-关闭窗口"><span class="toc-nav-text">6. close()关闭窗口</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#document对象"><span class="toc-nav-text">document对象</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-document-write-mychar-quot-My-name-quot-quot-lt-br-gt-quot"><span class="toc-nav-text">1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#弹框类"><span class="toc-nav-text">弹框类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-alert-quot-消息对话框-quot"><span class="toc-nav-text">2. alert(&quot;消息对话框&quot;);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-confirm-str"><span class="toc-nav-text">3. confirm(str);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-prompt-str1-str2"><span class="toc-nav-text">4. prompt(str1, str2);</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-window-open-URL-窗口名称-参数字符串"><span class="toc-nav-text">5. window.open([URL], [窗口名称], [参数字符串])</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-close-关闭窗口"><span class="toc-nav-text">6. close()关闭窗口</span></a></li></ol></li></ol>
     
   </div>
 </aside>
@@ -326,7 +327,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "js基础学习",
+        id: "BOM（Browser Object Mode）",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
