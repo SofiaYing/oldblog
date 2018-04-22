@@ -10,7 +10,7 @@
   
   <title>
     
-      基础-块级元素 | Sofia&#39;s Blog
+      html基础 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
 </header>
 
     <div id="article-banner">
-  <h2>基础-块级元素</h2>
+  <h2>html基础</h2>
   <p class="post-date">2018-04-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -147,7 +147,17 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>块级元素特性：一个块级元素会新开始一行并且尽可能撑满容器。其他常用的块级元素包括 p 、 form 和HTML5中的新元素： header 、 footer 、 section 等等</p>
+    <section class="markdown-content"><h3 id="一、html语义化"><a href="#一、html语义化" class="headerlink" title="一、html语义化"></a>一、html语义化</h3><h3 id="二、一些属性的讲解"><a href="#二、一些属性的讲解" class="headerlink" title="二、一些属性的讲解"></a>二、一些属性的讲解</h3><ul>
+<li><code>&lt;!DOCTYPE html&gt;</code>:html5标准网页声明,声明文档的解析类型，避免浏览器的怪异模式。</li>
+<li><code>meta</code>:用于描述页面特征或一些附加信息。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1，maximum-scale=1"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 适配移动端的页面 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- width属性控制视口的宽度。可以像width=600这样设为确切的像素数，或者设为device-width这一特殊值来指代比例为100%时屏幕宽度的CSS像素数值。（相应有height及device-height属性). --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- initial-scale属性控制页面最初加载时的缩放等级。maximum-scale、minimum-scale及user-scalable属性控制允许用户以怎样的方式放大或缩小页面。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"referrer"</span> <span class="attr">content</span>=<span class="string">"never"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 所有从当前页面中发起的请求将不会携带 referer --&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="三、块级元素和内联元素"><a href="#三、块级元素和内联元素" class="headerlink" title="三、块级元素和内联元素"></a>三、块级元素和内联元素</h3><ul>
+<li>块级元素特性：一个块级元素会新开始一行并且尽可能撑满容器。其他常用的块级元素包括 p 、 form ，HTML5中的新元素： header 、 footer 、 section 等等。</li>
+<li>内联元素特性：如a等。<h3 id="四、备忘"><a href="#四、备忘" class="headerlink" title="四、备忘"></a>四、备忘</h3></li>
+<li>实体：形如 <code>&amp;nbps；</code></li>
+<li>空格问题：用<code>&lt;pre&gt;</code>包裹，或者CSS设置<code>white-space : pre;</code></li>
+</ul>
 </section>
     <!-- Tags START -->
     
@@ -166,17 +176,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/实用小例子/">
+      <a class="nav-left" href="/blog/2018/04/18/js——面向对象（this，new，继承）/">
         <span class="nav-arrow">← </span>
         
-          (untitled)
+          JS面向对象
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/18/布局相关——实用小栗子/">
+      <a class="nav-right" href="/blog/2018/04/18/ES6——Promise/">
         
-          布局实用小栗子
+          Promise
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -225,7 +235,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="nav">none</ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一、html语义化"><span class="toc-nav-text">一、html语义化</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二、一些属性的讲解"><span class="toc-nav-text">二、一些属性的讲解</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#三、块级元素和内联元素"><span class="toc-nav-text">三、块级元素和内联元素</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#四、备忘"><span class="toc-nav-text">四、备忘</span></a></li></ol>
     
   </div>
 </aside>
@@ -291,7 +301,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "基础-块级元素",
+        id: "html基础",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
