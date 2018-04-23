@@ -179,7 +179,7 @@
 <p>顾名思义就是一个方法是否可以被缓存，此RFC里GET，HEAD和某些情况下的POST都是可缓存的，但是绝大多数的浏览器的实现里仅仅支持GET和HEAD。关于缓存的更多内容可以去看RFC7234。在这三个特性里一直在强调同一个事情，那就是协议不等于实现：协议规定安全在实现里不一定安全，协议规定幂等在实现里不一定幂等，协议规定可缓存在实现里不一定可缓存。</p>
 <p>这里参考了一篇文章：<br>作者：杨光<br>链接：<a href="https://www.zhihu.com/question/28586791/answer/145424285" target="_blank" rel="noopener">https://www.zhihu.com/question/28586791/answer/145424285</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。）</p>
 <blockquote>
-<p>（二）GET和POST请求格式</p>
+<p>（二）GET和POST请求格式<br>HOST:发出请求的页面坐在域<br>Accept：浏览器能够处理的内容类型</p>
 </blockquote>
 <ul>
 <li>GET请求</li>
@@ -187,7 +187,7 @@
 <p>GET / HTTP/1.1</p>
 <p>Host: baidu.com</p>
 <p>空行</p>
-<p>Accept: text/html</p>
+<p>Accept: text/html </p>
 <ul>
 <li>POST请求</li>
 </ul>
@@ -196,8 +196,19 @@
 <p>Accept: application/json</p>
 <p>Content-Type: application/x-www-form-urlencoded</p>
 <p>Content-Length: …</p>
-<p>username=pyz&amp;password=123（第四部分服务器返回的是字符串）</p>
+<p>username=pyz&amp;password=123（(四)服务器返回的是字符串）</p>
 <p>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</p>
+<blockquote>
+<p>(四) 响应</p>
+<ul>
+<li>GET的响应<br>HTTP/1.1 200 OK</li>
+</ul>
+</blockquote>
+<p>Content-Length: …</p>
+<p>Content-Type: text/html或application/x-JavaScript; </p>
+<p>charset=utf-8<br>（断行） =&gt; 这是(三)<br>&lt;!DOCTYPE html&gt;<br>…（服务器返回的是字符串）</p>
+<p>POST<br>若密码错了<br>HTTP/1.1 401 Unauthorized（若成功了就是200 OK）<br>Content-Type: application/json<br>Content-Length: …</p>
+<p>{‘’error”}</p>
 <blockquote>
 <p>（三）Cookie</p>
 </blockquote>
@@ -251,8 +262,31 @@
 <li>500 —— Internal Server Error,服务器端执行请求时发生了错误，也可能是Web应用存在的bug或某些临时故障。</li>
 <li>503 —— Service Unavailable，由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的。</li>
 </ol>
+<h3 id="到页面加载显示完成，这个过程中都发生了什么？"><a href="#到页面加载显示完成，这个过程中都发生了什么？" class="headerlink" title="到页面加载显示完成，这个过程中都发生了什么？"></a>到页面加载显示完成，这个过程中都发生了什么？</h3><ol>
+<li>浏览器查找域名对应的 IP 地址：<br>通过DNS查询到相应的IP地址，相当于你的路由问电信公司，于是电信公司返回对应的IP地址。<br>补充说明：</li>
+</ol>
+<p>你若修改了hosts文件，可自己指定域名的IP，绕过DNS。<br>URL和域名是两个概念：例如，xiedaimala.com是这个网站的域名，根据这个域名找到写代码啦的服务器，xiedaimala.com/courses 是URL，根据这个URL定位到写代码啦的课程表。<br>IP 地址与域名不是一一对应的关系：可以把多个提供相同服务的服务器 IP 设置为同一个域名，但在同一时刻一个域名只能解析出一个 IP地址；同时，一个 IP 地址可以绑定多个域名，数量不限；</p>
+<ol start="2">
+<li>浏览器和服务器建立连接——三次握手（采用TCP协议）<br>浏览器说：服务器我要连接你了，可以吗<br>服务器说：好的，连接吧<br>浏览器说：好的，那我连接了<br>连接成功！</li>
+<li>网页的请求与显示<br>浏览器向服务器发送请求的第一部分<br>浏览器向服务器发送请求头（第二部分），若是post请求还会发送请求体（第四部分）<br>服务器应答，发送响应的第一部分<br>服务器发送响应的响应头信息<br>服务器发送以Content-type描述的格式的数据<br>在浏览器还没有完全接收 HTML 文件时便开始渲染、显示网页<br>在执行 HTML 中代码时，根据需要，浏览器会继续请求图片、CSS、JavsScript等文件，过程同请求 HTML</li>
+<li>断开连接——四次握手<br>主机向服务器发送一个断开连接的请求（不早了，我该走了）；</li>
+</ol>
+<p>服务器接到请求后发送确认收到请求的信号（知道了）；</p>
+<p>服务器向主机发送断开通知（我也该走了）；</p>
+<p>主机接到断开通知后断开连接并反馈一个确认信号（嗯，好的），服务器收到确认信号后断开连接；</p>
+<p>补充说明：</p>
+<p>为什么服务器在接到断开请求时不立即同意断开：当服务器收到断开连接的请求时，可能仍然有数据未发送完毕，所以服务器先发送确认信号，等所有数据发送完毕后再同意断开。<br>第四次握手后，主机发送确认信号后并没有立即断开连接，而是等待了 2 个报文传送周期，原因是：如果第四次握手的确认信息丢失，服务器将会重新发送第三次握手的断开连接的信号，而服务器发觉丢包与重新发送的断开连接到达主机的时间正好为 2 个报文传输周期。</p>
 </section>
     <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/blog/blog/tags#http" >
+    <span class="tag-code">http</span>
+  </a>
+
+      </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -319,7 +353,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTTP-HyperText-Transfer-Protocol"><span class="toc-nav-text">HTTP(HyperText Transfer Protocol)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一、请求"><span class="toc-nav-text">一、请求</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二、状态码"><span class="toc-nav-text">二、状态码</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#HTTP-HyperText-Transfer-Protocol"><span class="toc-nav-text">HTTP(HyperText Transfer Protocol)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#一、请求"><span class="toc-nav-text">一、请求</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#二、状态码"><span class="toc-nav-text">二、状态码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#到页面加载显示完成，这个过程中都发生了什么？"><span class="toc-nav-text">到页面加载显示完成，这个过程中都发生了什么？</span></a></li></ol></li></ol>
     
   </div>
 </aside>

@@ -10,7 +10,7 @@
   
   <title>
     
-      article | Sofia&#39;s Blog
+      居中 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>article</h2>
-  <p class="post-date">2018-04-18</p>
+  <h2>居中</h2>
+  <p class="post-date">2018-04-23</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,8 +147,20 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"></section>
+    <section class="markdown-content"><h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><blockquote>
+<p>注意：尽量避免给定父元素高度。（可以想办法用子元素内边距撑开等方法）</p>
+</blockquote>
+</section>
     <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/blog/blog/tags#css" >
+    <span class="tag-code">css</span>
+  </a>
+
+      </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -156,17 +168,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/hello-world/">
+      <a class="nav-left" href="/blog/2018/04/21/markdown语法备忘/">
         <span class="nav-arrow">← </span>
         
-          Hello World
+          markdown语法备忘
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/18/js——对值传递的一点理解/">
+      <a class="nav-right" href="/blog/2018/04/23/AJAX基础/">
         
-          关于js值传递的一点理解
+          AJAX基础
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -215,7 +227,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="nav">none</ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#垂直居中"><span class="toc-nav-text">垂直居中</span></a></li></ol>
     
   </div>
 </aside>
@@ -225,7 +237,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/18/article/';
+    var url = 'https://sofiaying.github.io/blog/2018/04/23/居中/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -281,7 +293,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "article",
+        id: "居中",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
