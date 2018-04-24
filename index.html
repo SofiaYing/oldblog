@@ -163,7 +163,10 @@ AJAX：异步的JavaScript和XML。
 
 使用XMLHttpRequest发请求
 服务器返回XML格式的字符串，只能返回字符串
-JS解析XML，并更新局部页面API123456789101112131. let request = new XMLHttpRequest();2.  ...
+JS解析XML，并更新局部页面
+
+APIsend()
+send方法用于实际发出HTTP请求。如果不带参数，就表示HTTP请求只包含头信息，也就是只有一个 ...
         
       </div>
       <a class="more" href="/blog/2018/04/23/AJAX基础/">Read more</a>
@@ -285,7 +288,7 @@ GET：获取资源
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/blog/2018/04/18/js基础——常用互动方法/">BOM（Browser Object Mode）</a>
+        <a href="/blog/2018/04/18/js——事件处理程序/">JS事件处理程序</a>
       </h2>
       <p class="article-date">April 18, 2018</p>
       
@@ -297,39 +300,57 @@ GET：获取资源
       
       <div class="article-summary">
         
-          document对象window对象的一个属性，可以用来处理页面文档
-1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);弹框类2. alert(&quot;消息对话框&quot;);
-与document. ...
+          
+大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览器。1.DOM0级事件处理程序1.1 指定事件处理程序12var btn = document.getElementById(&quot;myBtn&quot;);btn.onclick = functi ...
         
       </div>
-      <a class="more" href="/blog/2018/04/18/js基础——常用互动方法/">Read more</a>
+      <a class="more" href="/blog/2018/04/18/js——事件处理程序/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/blog/2018/04/18/js——面向对象（this，new，继承）/">JS面向对象</a>
+        <a href="/blog/2018/04/18/git/">常用命令行及git备忘</a>
       </h2>
       <p class="article-date">April 18, 2018</p>
       
         
-  <a href="/blog/blog/tags#js" >
-    <span class="tag-code">js</span>
+  <a href="/blog/blog/tags#git" >
+    <span class="tag-code">git</span>
   </a>
 
       
       <div class="article-summary">
         
-          面向对象的三大特点：
-封装：方便合作，减轻负担。【大部分语言用类实现；js中没有类，用的是构造函数（返回为一个对象的函数）。】
-继承：可以复用代码。【js中ES6之前用原型链实现共有属性继承】
-多态：让代码更灵活。
-
-对象：某个特定引用类型的实例。
-普通对象
-数组：下标为‘0’到‘lengt ...
+          常用命令行
+mkdir    创建目录
+touch    创建文件
+echo    echo “s” &gt; c:\file.txt    创建文件file.txt
+echo “s” &gt;! file.txt    覆盖file.txt
+rm    remove    删除
+mv    ...
         
       </div>
-      <a class="more" href="/blog/2018/04/18/js——面向对象（this，new，继承）/">Read more</a>
+      <a class="more" href="/blog/2018/04/18/git/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/blog/2018/04/18/CSS——选择器/">CSS选择器</a>
+      </h2>
+      <p class="article-date">April 18, 2018</p>
+      
+        
+  <a href="/blog/blog/tags#css" >
+    <span class="tag-code">css</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          1234567891011121314151617181920212223242526272829&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DT ...
+        
+      </div>
+      <a class="more" href="/blog/2018/04/18/CSS——选择器/">Read more</a>
     </article>
   
     <article class="article-card">
@@ -355,26 +376,6 @@ html语义化让页面的内容结构化，结构更清晰，便于对浏览器�
         
       </div>
       <a class="more" href="/blog/2018/04/18/html基础/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/blog/2018/04/18/CSS——选择器/">CSS选择器</a>
-      </h2>
-      <p class="article-date">April 18, 2018</p>
-      
-        
-  <a href="/blog/blog/tags#css" >
-    <span class="tag-code">css</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          1234567891011121314151617181920212223242526272829&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DT ...
-        
-      </div>
-      <a class="more" href="/blog/2018/04/18/CSS——选择器/">Read more</a>
     </article>
   
 
