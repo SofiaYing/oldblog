@@ -162,8 +162,12 @@
 </ul>
 <h3 id="三、块级元素和内联元素"><a href="#三、块级元素和内联元素" class="headerlink" title="三、块级元素和内联元素"></a>三、块级元素和内联元素</h3><ul>
 <li>块级元素特性：一个块级元素会新开始一行并且尽可能撑满容器。其他常用的块级元素包括 p 、 form ，HTML5中的新元素： header 、 footer 、 section 等等。</li>
-<li>内联元素特性：如a等。</li>
+<li>内联元素特性：对内联元素设置高度height和width，是不起作用的。高度由文本的字体大小所决定，宽度由文本内容的长短决定。</li>
 </ul>
+<ol>
+<li>行高line-height也可以设置内联元素的高度。</li>
+<li>设置内联元素的padding、margin和border,不会影响高度，但会影响宽度。</li>
+</ol>
 <h3 id="四、备忘"><a href="#四、备忘" class="headerlink" title="四、备忘"></a>四、备忘</h3><ul>
 <li>实体：形如 <code>&amp;nbps；</code></li>
 <li>空格问题：用<code>&lt;pre&gt;</code>包裹，或者CSS设置<code>white-space : pre;</code></li>
@@ -204,17 +208,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/js基础——常用互动方法/">
+      <a class="nav-left" href="/blog/2018/04/18/js——事件处理程序/">
         <span class="nav-arrow">← </span>
         
-          BOM（Browser Object Mode）
+          JS事件处理程序
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/18/CSS——选择器/">
+      <a class="nav-right" href="/blog/2018/04/20/数组/">
         
-          CSS选择器
+          数组
         
         <span class="nav-arrow"> →</span>
       </a>
