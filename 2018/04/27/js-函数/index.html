@@ -10,7 +10,7 @@
   
   <title>
     
-      markdown语法备忘 | Sofia&#39;s Blog
+      js-函数 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>markdown语法备忘</h2>
-  <p class="post-date">2018-04-21</p>
+  <h2>js-函数</h2>
+  <p class="post-date">2018-04-27</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,20 +147,20 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><ul>
-<li>无序列表<h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><blockquote>
-<p>标记</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<p>横线<br><span style="border-bottom:2px dashed pink;">用HTML、CSS解决下划线问题</span><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>代码块<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>标注</code></p>
-<p><div id="Mark"></div>这句话定义了锚点所指定的位置标记，名字为“Mark”.</p>
-<p><a href="#Mark">锚点链接，点击即会跳转</a>.</p>
-<p><a href="这里是其他页面链接#Mark">页间跳转</a>.</p>
-</section>
+    <section class="markdown-content"><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匿名函数</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//fn存储的是匿名函数的地址</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2 = fn;  <span class="comment">// fn2和fn同时指向匿名函数的地址</span></span><br><span class="line">fn.name  <span class="comment">//fn  匿名函数默认的name跟给定的变量是一样的</span></span><br><span class="line">fn2.name  <span class="comment">//fn</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//具名函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>)</span>&#123;   <span class="comment">//fn3作用域为当前词法作用域</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">var</span> fn5 = <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//fn4的作用域为fn4函数本身</span></span><br><span class="line"><span class="built_in">console</span>.log(fn3); <span class="comment">//ƒ fn3()&#123;return 3;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(fn4); <span class="comment">//fn4 is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//箭头函数</span></span><br><span class="line"><span class="keyword">var</span> fn6 = <span class="function"><span class="params">i</span> =&gt;</span> i+<span class="number">1</span>;  <span class="comment">//一个参数，一个表达式</span></span><br><span class="line"><span class="keyword">var</span> fn7 = <span class="function">(<span class="params">i,j</span>) =&gt;</span> i+j;  <span class="comment">//两个参数，一个表达式</span></span><br><span class="line"><span class="keyword">var</span> fn8 = <span class="function">(<span class="params">i,j</span>) =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="number">1</span>);<span class="keyword">return</span> i+j;&#125; <span class="comment">//两个表达式，要显示的return</span></span><br></pre></td></tr></table></figure>
+<h3 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> global =<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">param1</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> value1 = <span class="string">'value1'</span>;</span><br><span class="line">  <span class="keyword">var</span> v = <span class="string">'v'</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">param2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">'inner v'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(value1);   <span class="comment">//value1</span></span><br><span class="line">    <span class="built_in">console</span>.log(v);    <span class="comment">//inner v</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">'fn3 v'</span>;     </span><br><span class="line">    fn2(v);    <span class="comment">//value1 , inner v</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//词法作用域确定的是变量的关系，无法确定变量的值</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);     </span><br><span class="line">&#125;</span><br><span class="line">a=<span class="number">2</span>;</span><br><span class="line">b(); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3></section>
     <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
+  </a>
+
+      </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -168,20 +168,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/20/HTTP/">
+      <a class="nav-left" href="/blog/2018/04/23/AJAX基础/">
         <span class="nav-arrow">← </span>
         
-          HTTP
+          AJAX基础
         
       </a>
     
-    
-      <a class="nav-right" href="/blog/2018/04/21/实用小栗子/">
-        
-          实用小栗子
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -228,7 +221,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#三级标题"><span class="toc-nav-text">三级标题</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#函数"><span class="toc-nav-text">函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#词法作用域"><span class="toc-nav-text">词法作用域</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#调用栈"><span class="toc-nav-text">调用栈</span></a></li></ol>
     
   </div>
 </aside>
@@ -238,7 +231,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/21/markdown语法备忘/';
+    var url = 'https://sofiaying.github.io/blog/2018/04/27/js-函数/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -294,7 +287,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "markdown语法备忘",
+        id: "js-函数",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

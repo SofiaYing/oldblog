@@ -147,7 +147,7 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h2 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(HyperText Transfer Protocol)</h2><p>超文本传输协议，客户端如何请求及服务器如何响应</p>
+    <section class="markdown-content"><h2 id="HTTP-HyperText-Transfer-Protocol"><a href="#HTTP-HyperText-Transfer-Protocol" class="headerlink" title="HTTP(HyperText Transfer Protocol)"></a>HTTP(HyperText Transfer Protocol)</h2><p>超文本传输协议，客户端如何请求及服务器如何响应<br><img src="https://github.com/SofiaYing/Note/raw/master/images/httpRequest.png" alt="http请求图片"></p>
 <h3 id="一、请求"><a href="#一、请求" class="headerlink" title="一、请求"></a>一、请求</h3><blockquote>
 <p>（一）GET与POST区别</p>
 </blockquote>
@@ -199,18 +199,18 @@
 <p>username=pyz&amp;password=123（(四)服务器返回的是字符串）</p>
 <p>请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！</p>
 <blockquote>
-<p>(四) 响应</p>
+<p>(三) 响应</p>
+</blockquote>
 <ul>
 <li>GET的响应<br>HTTP/1.1 200 OK</li>
 </ul>
-</blockquote>
 <p>Content-Length: …</p>
 <p>Content-Type: text/html或application/x-JavaScript; </p>
 <p>charset=utf-8<br>（断行） =&gt; 这是(三)<br>&lt;!DOCTYPE html&gt;<br>…（服务器返回的是字符串）</p>
 <p>POST<br>若密码错了<br>HTTP/1.1 401 Unauthorized（若成功了就是200 OK）<br>Content-Type: application/json<br>Content-Length: …</p>
 <p>{‘’error”}</p>
 <blockquote>
-<p>（三）Cookie</p>
+<p>（四）Cookie</p>
 </blockquote>
 <ul>
 <li>HTTP无状态协议，不对之前发生过的请求和响应的状态进行管理。</li>
@@ -341,14 +341,15 @@
      -->
     <!-- 二维码 END -->
     
+    <!--  -->
       <!-- Gitment START -->
-      <div id="comments"></div>
+      <!-- <div id="comments"></div> -->
       <!-- Gitment END -->
-    
+    <!--  -->
   </article>
   <!-- Article END -->
   <!-- Catalog START -->
-  
+  <!-- 
     <aside class="catalog-container">
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
@@ -357,7 +358,7 @@
     
   </div>
 </aside>
-  
+   -->
   <!-- Catalog END -->
 </main>
 
