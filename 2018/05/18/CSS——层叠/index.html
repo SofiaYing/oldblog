@@ -10,7 +10,7 @@
   
   <title>
     
-      CSS布局 | Sofia&#39;s Blog
+      CSS——层叠 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>CSS布局</h2>
-  <p class="post-date">2018-04-18</p>
+  <h2>CSS——层叠</h2>
+  <p class="post-date">2018-05-18</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,19 +147,31 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h2 id="一侧定宽的两栏自适应布局——float"><a href="#一侧定宽的两栏自适应布局——float" class="headerlink" title="一侧定宽的两栏自适应布局——float"></a>一侧定宽的两栏自适应布局——float</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/!--假设定宽部分为120px宽的图片，自适应部分为文字。--/</span><br><span class="line">HTML</span><br><span class="line">&lt;div class=&quot;twoColLayout&quot;&gt;</span><br><span class="line">  &lt;img src=&quot;1.jpg&quot;&gt;</span><br><span class="line">  &lt;p&gt;一段文字,...&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">/*margin具有流体特性下的改变尺寸特性，margin可以很方便实现很多流体布局*/</span><br><span class="line">CSS</span><br><span class="line">.twoColLayout&#123;overflow:hidden;&#125;</span><br><span class="line">.twoColLayout&gt;img&#123;float:legt;&#125;</span><br><span class="line">.twoColLayout&gt;p&#123;margin-left:130px;&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;twoColLayout&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;full&quot;&gt;</span><br><span class="line">    &lt;p&gt;一段文字,...&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;img src=&quot;1.jpg&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">/*当图片右侧定位，为了元素在DOM文档流中的前后顺序和视觉表现上前后顺序一致，借助margin负值*/</span><br><span class="line">.twoColLayout&#123;overflow:hidden;&#125;</span><br><span class="line">.full&#123;</span><br><span class="line">  width:100%;</span><br><span class="line">  float:left;</span><br><span class="line">  &#125;</span><br><span class="line">p&#123;margin-right:130px&#125;</span><br><span class="line">.twoColLayout&gt;img&#123;</span><br><span class="line">  float:left;</span><br><span class="line">  margin-left:-120px;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="一侧定宽的两栏自适应布局——position"><a href="#一侧定宽的两栏自适应布局——position" class="headerlink" title="一侧定宽的两栏自适应布局——position"></a>一侧定宽的两栏自适应布局——position</h2><p>优点：任意排列元素，无须管HTML中出现的顺序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">nav &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0px;</span><br><span class="line">  width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">section &#123;</span><br><span class="line">  /* position is static by default */</span><br><span class="line">  margin-left: 200px;      &lt;!--绝对定位元素脱离文档流，会遮蔽其他元素--&gt;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;nav&gt;</span><br><span class="line">    &lt;a href=&quot;#&quot;&gt;XXX&lt;/a&gt;</span><br><span class="line">  &lt;/nav&gt;</span><br><span class="line">  &lt;section&gt;</span><br><span class="line">    &lt;p&gt;XXX&lt;/p&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="三栏布局——float布局"><a href="#三栏布局——float布局" class="headerlink" title="三栏布局——float布局"></a>三栏布局——float布局</h2><ol>
-<li>两边固定宽度，中间宽度自适应。</li>
+    <section class="markdown-content"><h3 id="层叠顺序"><a href="#层叠顺序" class="headerlink" title="层叠顺序"></a>层叠顺序</h3><p><code>relative</code>(只要定位了，都是要按index计算) -&gt; <code>文字/内联元素/inline-block</code> -&gt; <code>float</code>(包裹float内的内联元素与float同一层叠级别) -&gt; <code>div/块级元素</code> -&gt; 【<code>position(z-index=-1)</code>(父元素定位，且设置z-index)】 -&gt;<code>border</code> -&gt; <code>backgroud</code> -&gt; 【<code>position(z-index=-1)</code>(父元素未定位)】</p>
+<ul>
+<li>同级别的，后出现的会盖住先出现的</li>
+<li>只有position不为static的元素，设置z-index才有用。<h3 id="堆叠上下文"><a href="#堆叠上下文" class="headerlink" title="堆叠上下文"></a>堆叠上下文</h3></li>
+</ul>
+<ol>
+<li>以下这些元素(不全)会触发堆叠上下文：</li>
 </ol>
 <ul>
-<li>基于纯float实现的三栏布局需要将中间的内容放在HTML结构的最后，否则右侧会沉在中间内容的下侧</li>
-<li>元素浮动后，脱离文档流，后面的元素受浮动影响，设置受影响元素的margin值即可</li>
-<li>利用中间元素的margin值控制两边的间距</li>
+<li>根元素(html)</li>
+<li>z-index不为auto(默认为auto)的绝对/相对定位元素</li>
+<li>z-index不为auto(默认为auto)的flex元素</li>
+<li>position:fixed</li>
+<li>opacity属性小于1的元素</li>
 </ul>
-<p><strong>注意</strong>:宽度小于左右部分宽度之和时，右侧部分会被挤下去。</p>
-<p><strong>不足</strong>:div顺序不能改变，无法优先加载重要的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrap&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;left&quot;&gt;左侧&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;right&quot;&gt;右侧&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;middle&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">    .wrap &#123;background: #eee; overflow: hidden; padding: 20px;&#125;  </span><br><span class="line">&lt;!-- 设置overflow:hidden，生成BFC，计算高度时考虑浮动元素。解决父元素高度塌陷问题 --&gt;</span><br><span class="line">    .left &#123;width: 200px; height: 50px; float: left; &#125;</span><br><span class="line">    .right &#123;width: 120px; height:  200px; float: right; &#125;</span><br><span class="line">    .middle &#123;margin-left: 220px;  margin-right: 140px;&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<ol start="2">
+<li>作用：主要影响z-index</li>
+</ol>
+<ul>
+<li>没有其他堆叠上下文的情况下，html会管理堆叠上下文的关系。</li>
+<li>满足任一一个都会触发一个新的堆叠上下文，内部子元素与外部堆叠上下文的元素比较时，其层级由父元素(管理自己的堆叠上下文)决定，内部子元素之间互相堆叠顺序不变。<ul>
+<li>这也解释了为什么【<code>position(z-index=-1)</code>(父元素定位，且设置z-index)】的层级顺序高于background和border。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'parent1'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'son1'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'parent2'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'son2'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"> /* 此时层级parent2高于parent1，son2高于son1 */</span></span><br><span class="line"><span class="undefined"> /* 当parent1和parent2无定位时，son1高于son2 */</span></span><br><span class="line"><span class="undefined">.parent1&#123;</span></span><br><span class="line"><span class="undefined">  position:relative;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">.parent2&#123;</span></span><br><span class="line"><span class="undefined">  position:relative;     </span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">.son1&#123;</span></span><br><span class="line"><span class="undefined">  z-index:2;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">.son2&#123;</span></span><br><span class="line"><span class="undefined">  z-index:1;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
 </section>
     <!-- Tags START -->
     
@@ -178,20 +190,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/js——事件处理程序/">
+      <a class="nav-left" href="/blog/2018/05/14/响应式布局/">
         <span class="nav-arrow">← </span>
         
-          JS事件处理程序
+          响应式布局
         
       </a>
     
-    
-      <a class="nav-right" href="/blog/2018/04/18/git/">
-        
-          常用命令行及git备忘
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -238,7 +243,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一侧定宽的两栏自适应布局——float"><span class="toc-nav-text">一侧定宽的两栏自适应布局——float</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一侧定宽的两栏自适应布局——position"><span class="toc-nav-text">一侧定宽的两栏自适应布局——position</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三栏布局——float布局"><span class="toc-nav-text">三栏布局——float布局</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#层叠顺序"><span class="toc-nav-text">层叠顺序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#堆叠上下文"><span class="toc-nav-text">堆叠上下文</span></a></li></ol>
     
   </div>
 </aside>
@@ -248,7 +253,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/18/布局/';
+    var url = 'https://sofiaying.github.io/blog/2018/05/18/CSS——层叠/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -304,7 +309,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "CSS布局",
+        id: "CSS——层叠",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
