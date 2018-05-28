@@ -152,7 +152,7 @@
 <li>一个div只有内联元素，高度由行高决定</li>
 </ol>
 <ul>
-<li>设置内联元素的padding和margin,border不会影响高度，但会影响宽度。</li>
+<li>设置内联元素（注意，不包括行内替换元素，inline-block等）的padding,margin,border不会影响line-height，但会影响宽度，padding会影响背景颜色高度。<br>【对于内联元素，padding和border增加了其background区域，但不会增加内容区域高度（甚至是line-box高度）。因此，你在屏幕上看到的不一定就是内容区域。margin-top和margin-bottom对内联元素不生效。】</li>
 <li>div的宽度默认自适应父元素，尽量不要改动。<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">outline</span>: <span class="number">1px</span> solid green;</span><br><span class="line">  <span class="comment">/* 轮廓:是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。但是并不会像border一样占据位置。 */</span></span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">20px</span>;</span><br><span class="line">  <span class="comment">/* 如果div只有一个内联元素，div高度显示为字体大小*建议行高 */</span></span><br><span class="line">  <span class="attribute">line-height</span>:<span class="number">30px</span>;</span><br><span class="line">  <span class="comment">/* 因为字体建议行高不同，如需要可以给定行高 */</span></span><br><span class="line">  <span class="attribute">word-break</span>:break-all;</span><br><span class="line">  <span class="comment">/* 当有一个很长的单词的时候，为了不让其超出父级元素，自然换行，使用该属性设置。 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -187,7 +187,7 @@
       <a class="nav-left" href="/blog/2018/04/23/居中/">
         <span class="nav-arrow">← </span>
         
-          居中
+          CSS——居中
         
       </a>
     

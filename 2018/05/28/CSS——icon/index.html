@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="yanm1ng&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/blog/css/images/read.png">
+  
+  <title>
+    
+      CSS——icon | Sofia&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/blog/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/blog/js/qrious.js"></script>
+<script src="/blog/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <!-- <img src="/css/images/logo.png" /> -->
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/blog/">
+      <div class="logo"></div>
+      <span>Sofia's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="http://sofiaying.github.io/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/" class="item-link">Article</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="http://sofiaying.github.io/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/" class="menu-link">Article</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>CSS——icon</h2>
+  <p class="post-date">2018-05-28</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h2 id="切图"><a href="#切图" class="headerlink" title="切图"></a>切图</h2><h3 id="psd"><a href="#psd" class="headerlink" title="psd"></a>psd</h3><ul>
+<li>查看图层：</li>
+</ul>
+<p>（1）复杂图层：右键，选中图层名称。</p>
+<p>（2）简单图层：可以在右侧点击眼睛图片显示隐藏图层</p>
+<ul>
+<li>导出图层：</li>
+</ul>
+<p>(1) 在右侧所需图层中，右键，<code>duplicate layer</code>,重新保存document。</p>
+<p>(2) 上侧导航栏，image，<code>trim</code>,ok.</p>
+<p>(3) 上侧导航栏，image，<code>anves size</code>(画布大小)，改成相应的尺寸.</p>
+<p>(4) file export <code>quick export as PNG</code>（旧版ps：<code>save for web</code>,选择保存为png。）</p>
+<p>(5) 测量图片直接间距，如果用Ps,可以用选中图片A，alt+command,再选中图片B。</p>
+<h3 id="抠图（建议设计师给psd）"><a href="#抠图（建议设计师给psd）" class="headerlink" title="抠图（建议设计师给psd）"></a>抠图（建议设计师给psd）</h3><p>（1）image <code>crop</code>,可以对png等进行粗裁剪</p>
+<p>（2）(ps如何选择想要的像素/如何使用魔法棒工具)左侧工具栏 魔法棒 <code>magic wand tool</code>,选择想要留下的区域，按一下shift可以再多选择，参考下图。<br><img src="https://github.com/SofiaYing/Note/blob/master/images/ps.png" alt="魔法棒"></p>
+<p>（3）右键<code>select inverse</code>（反选），点击delete，可以清楚不想要的区域（就变成了透明背景）.</p>
+<p>（4）右键<code>deselect</code>(取消选择)。</p>
+<p>剩下参照导出图层方法（2）-（5）</p>
+<h2 id="导入图片"><a href="#导入图片" class="headerlink" title="导入图片"></a>导入图片</h2><h3 id="img方法"><a href="#img方法" class="headerlink" title="img方法"></a>img方法</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'...'</span> <span class="attr">alt</span>=<span class="string">'..'</span>&gt;</span>    </span><br><span class="line"><span class="comment">&lt;!-- 图片默认会保持比例，如果要改变尺寸，设置width就可以了。 --&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="背景图法"><a href="#背景图法" class="headerlink" title="背景图法"></a>背景图法</h3><ul>
+<li>应用场景:（通常情况下img方法更好）</li>
+</ul>
+<p>（1）优点：背景图片不会随着div的宽高而变形</p>
+<p>（2）雪碧图</p>
+<ul>
+<li>注意repeat 和 图片是否居中显示问题<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">.icon&#123;</span></span><br><span class="line"><span class="undefined">  display:inline-block;</span></span><br><span class="line"><span class="undefined">  width:100px;</span></span><br><span class="line"><span class="undefined">  height:100px;</span></span><br><span class="line"><span class="undefined">  background:transparent url(...) no-repeat 0 0;</span></span><br><span class="line"><span class="undefined">  /* 0 0 表示左上角对齐 */</span></span><br><span class="line"><span class="undefined">  /* background-image:url('...'); */</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'icon'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="CSS-Sprites-精灵图-雪碧图-把多张图连城一个图-可以将图标合并"><a href="#CSS-Sprites-精灵图-雪碧图-把多张图连城一个图-可以将图标合并" class="headerlink" title="CSS Sprites (精灵图)雪碧图:把多张图连城一个图,可以将图标合并"></a>CSS Sprites (精灵图)雪碧图:把多张图连城一个图,可以将图标合并</h3><p>查询css sprites generator，可以在线生成，拷贝代码即可。<br>原理：将多个图片合并成一个图标，所有div的背景都是一整张图片，利用background-position，width,height显示图片不同位置，视觉上只显示了一个图标。</p>
+<h3 id="iconfont字体图标-html"><a href="#iconfont字体图标-html" class="headerlink" title="iconfont字体图标 html"></a>iconfont字体图标 html</h3><ul>
+<li>字体图标编码：&amp;#xe61…。约定促成的，iconfont一般以e61开始，因为这一段是不表示任何字符的，万一字体没有加载，也不会出现错误，变成其他字。</li>
+<li><p>基础知识补充<br>转义/实体:<code>&amp;entityName</code>或<code>&amp;#entityNumber</code>，超过某个数字时，则以&amp;#x开头，<code>;</code>表示结束。<br>具体的参照Unicode编码，可以查询在线转换工具。<br>空格：&amp;nbsp或&amp;#60   如：1&60;2</p>
+</li>
+<li><p>如应用iconfont网站上的图标（具体用法可以参照图标下载页面的使用帮助）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- 复制unicode代码 --&gt;</span></span></span><br><span class="line"><span class="undefined">@font-face&#123;</span></span><br><span class="line"><span class="undefined">  font-family:'iconfont';</span></span><br><span class="line"><span class="undefined">  ...</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 设置字体 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont;'</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引用编码 --&gt;</span></span><br><span class="line">&amp;#xe614</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="iconfont-css"><a href="#iconfont-css" class="headerlink" title="iconfont css"></a>iconfont css</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- 复制unicode代码 --&gt;</span></span></span><br><span class="line"><span class="undefined">@font-face&#123;</span></span><br><span class="line"><span class="undefined">  font-family:'iconfont';</span></span><br><span class="line"><span class="undefined">  ...</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">.eg::before&#123;</span></span><br><span class="line"><span class="undefined">  content:'\e614\e61c';</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'eg'</span> <span class="attr">style</span>=<span class="string">'font-family:iconfont;'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 复制cont class代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">ref</span>=<span class="string">'stylesheet'</span> <span class="attr">href</span>=<span class="string">'//at.alicdn.com/t/font_671677_3yultz9v3so1dcxr.css'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  .iconfont&#123;</span></span><br><span class="line"><span class="undefined">    font-size:100px;</span></span><br><span class="line"><span class="undefined">    color:red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"iconfont icon-loading"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- iconfont用来设置字体 icon-loading用来指代图标 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="iconfont-symbol-svg-优先使用"><a href="#iconfont-symbol-svg-优先使用" class="headerlink" title="iconfont symbol(svg)(优先使用)"></a>iconfont symbol(svg)(优先使用)</h3><ul>
+<li>可以使用sketch，ps等工具将图片导出为svg，具体网上查询。</li>
+<li><p><code>SVG</code> <code>canvas</code> <code>png</code> 具体网上查询.</p>
+</li>
+<li><p>这种用法其实是做了一个svg的集合，与上面两种相比具有如下特点：</p>
+</li>
+</ul>
+<ol>
+<li>支持多色图标了，不再受单色限制。</li>
+<li>通过一些技巧，支持像字体那样，通过font-size,color来调整样式。</li>
+<li>兼容性较差，支持 ie9+,及现代浏览器。</li>
+<li>浏览器渲染svg的性能一般，还不如png。<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 第一步：拷贝项目下面生成的symbol代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 第二步：加入通用css代码（引入一次就行） --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .icon &#123;</span></span><br><span class="line"><span class="undefined">       width: 1em; height: 1em;</span></span><br><span class="line"><span class="undefined">       vertical-align: -0.15em;</span></span><br><span class="line"><span class="undefined">       fill: currentColor;</span></span><br><span class="line"><span class="undefined">       overflow: hidden;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    .svg-xxx&#123;</span></span><br><span class="line"><span class="undefined">      /* svg不会变形,width和height都设置才会改变大小；</span></span><br><span class="line"><span class="undefined">      也不会产生锯齿；</span></span><br><span class="line"><span class="undefined">      默认就是居中，不会像iconfont有位置不居中问题； */</span></span><br><span class="line"><span class="undefined">      width:100px; </span></span><br><span class="line"><span class="undefined">      height：100px； </span></span><br><span class="line"><span class="undefined">      fill:red;</span></span><br><span class="line"><span class="undefined">      /* 不是字体，所以可以用fill改变没有颜色的svg  */</span></span><br><span class="line"><span class="undefined">      stroke:blue;</span></span><br><span class="line"><span class="undefined">      stroke-width:10px;</span></span><br><span class="line"><span class="undefined">      /* 也可以记性描边，或者渐变等等 */</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 第三步：挑选相应图标并获取类名，应用于页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">class</span>=<span class="string">"icon svg-xxx"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">use</span> <span class="attr">xlink:href</span>=<span class="string">"#icon-xxx"</span>&gt;</span><span class="tag">&lt;/<span class="name">use</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- use表示使用哪个图标 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/blog/blog/tags#CSS" >
+    <span class="tag-code">CSS</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/2018/05/18/CSS——层叠/">
+        <span class="nav-arrow">← </span>
+        
+          CSS——层叠
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    <!-- 
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+     -->
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    <!-- 
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+     -->
+    <!-- 二维码 END -->
+    
+    <!--  -->
+      <!-- Gitment START -->
+      <!-- <div id="comments"></div> -->
+      <!-- Gitment END -->
+    <!--  -->
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  <!-- 
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#切图"><span class="toc-nav-text">切图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#psd"><span class="toc-nav-text">psd</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#抠图（建议设计师给psd）"><span class="toc-nav-text">抠图（建议设计师给psd）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#导入图片"><span class="toc-nav-text">导入图片</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#img方法"><span class="toc-nav-text">img方法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#背景图法"><span class="toc-nav-text">背景图法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CSS-Sprites-精灵图-雪碧图-把多张图连城一个图-可以将图标合并"><span class="toc-nav-text">CSS Sprites (精灵图)雪碧图:把多张图连城一个图,可以将图标合并</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#iconfont字体图标-html"><span class="toc-nav-text">iconfont字体图标 html</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#iconfont-css"><span class="toc-nav-text">iconfont css</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#iconfont-symbol-svg-优先使用"><span class="toc-nav-text">iconfont symbol(svg)(优先使用)</span></a></li></ol></li></ol>
+    
+  </div>
+</aside>
+   -->
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://sofiaying.github.io/blog/2018/05/28/CSS——icon/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })}
+     else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "CSS——icon",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/blog/js/script.js"></script>
+  </body>
+</html>
