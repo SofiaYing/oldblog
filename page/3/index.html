@@ -166,7 +166,7 @@
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/blog/2018/04/18/js——对值传递的一点理解/">关于js值传递的一点理解</a>
+        <a href="/blog/2018/04/18/js——事件处理程序/">JS事件处理程序</a>
       </h2>
       <p class="article-date">April 18, 2018</p>
       
@@ -179,15 +179,15 @@
       <div class="article-summary">
         
           
-第一种误解是：JavaScript是引用传递。（这么理解的人，大体会解释说JavaScript的形参是对象的引用所以才叫引用传递。这个解释的错误在于：引用传递这个词不是这个意思，这个词是形容调用方式，而不是参数本质的类型的。所以，即使有人因为明白引用本身也是个值，然后觉得JavaScrip ...
+大多数情况下，都是将事件处理程序添加到事件流的冒泡阶段，这样可以最大限度地兼容各种浏览器。1.DOM0级事件处理程序1.1 指定事件处理程序12var btn = document.getElementById(&quot;myBtn&quot;);btn.onclick = functi ...
         
       </div>
-      <a class="more" href="/blog/2018/04/18/js——对值传递的一点理解/">Read more</a>
+      <a class="more" href="/blog/2018/04/18/js——事件处理程序/">Read more</a>
     </article>
   
     <article class="article-card">
       <h2 class="article-head">
-        <a href="/blog/2018/04/18/js基础——常用互动方法/">BOM（Browser Object Mode）</a>
+        <a href="/blog/2018/04/18/js——闭包/">js闭包</a>
       </h2>
       <p class="article-date">April 18, 2018</p>
       
@@ -199,12 +199,10 @@
       
       <div class="article-summary">
         
-          document对象window对象的一个属性，可以用来处理页面文档
-1. document.write(mychar+&quot;My name&quot;+&quot;&lt;br&gt;&quot;);弹框类2. alert(&quot;消息对话框&quot;);
-与document. ...
+          12345678function bindname(name)&#123;  return function(action)&#123;    console.log(`$&#123;name&#125; is $&#123;action&#125;ing);  //ES6字符串模板，此处用 ...
         
       </div>
-      <a class="more" href="/blog/2018/04/18/js基础——常用互动方法/">Read more</a>
+      <a class="more" href="/blog/2018/04/18/js——闭包/">Read more</a>
     </article>
   
 
