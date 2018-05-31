@@ -10,7 +10,7 @@
   
   <title>
     
-      常用命令行及git备忘 | Sofia&#39;s Blog
+      组件 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>常用命令行及git备忘</h2>
-  <p class="post-date">2018-04-18</p>
+  <h2>组件</h2>
+  <p class="post-date">2018-05-31</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,37 +147,72 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h3><ul>
-<li>mkdir    创建目录</li>
-<li>touch    创建文件</li>
-<li>echo    echo “s” &gt; c:\file.txt    创建文件file.txt</li>
-<li>echo “s” &gt;! file.txt    覆盖file.txt</li>
-<li>rm    remove    删除</li>
-<li>mv    move    重命名</li>
-<li>cp    copy    复制</li>
-<li>ls    list 显示当前目录下所有文件</li>
-<li>ls -a    显示隐藏文件</li>
-<li>cd    change directory    改变目录</li>
+    <section class="markdown-content"><h3 id="轮子"><a href="#轮子" class="headerlink" title="轮子"></a>轮子</h3><ol>
+<li>标准库的扩充</li>
+</ol>
+<ul>
+<li>underscore.js 扩充了Array和Object相关API</li>
+<li>moment.js 扩充了Date</li>
 </ul>
-<h3 id="git备忘"><a href="#git备忘" class="headerlink" title="git备忘"></a>git备忘</h3><ul>
-<li>检查当前文件状态 git status/gst</li>
-<li>切分支 git checkout branchName</li>
-<li>添加到暂存区 git add .</li>
-<li>提交到本地 git commit -m’’</li>
-<li>提交到远端 git push [remote:origin] [branch]</li>
-<li>拉取远端代码并合并 git pull </li>
-<li>查看本地分支 git branch</li>
-<li>查看远程分支 git branch -r</li>
-<li>合并分支 git merge branchName</li>
+<ol start="2">
+<li>DOM的扩充</li>
+</ol>
+<ul>
+<li>JQuery.js 操作DOM</li>
+<li>video.js 操作video</li>
+<li>Fabric.js 操作canvas</li>
 </ul>
+<ol start="3">
+<li>UI组件</li>
+</ol>
+<ul>
+<li>纯CSS,如组件库，如Bulma</li>
+<li>大而全的UI框架(很多UI组件，风格相似，组合在一起),如Bootstrap、Element UI</li>
+<li>垂直领域的UI组件<ul>
+<li>专做轮播组件，如Swiper</li>
+<li>输入提示，typeahead.js</li>
+<li>文件上传，fine-uploader</li>
+<li>3D瓦片，vanilla-tilt.js</li>
+<li>视差效果 parallax.js</li>
+<li>数据可视化 D3.js</li>
+<li>图表的 echarts.js</li>
+<li>动画 velocity.js</li>
+<li>粒子效果 particle.js</li>
+<li>手势识别的 hammer.js</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>编程思想类</li>
+</ol>
+<ul>
+<li>实现 MVC 思想的 backbone.js</li>
+<li>实现 MVVM 思想的 AngularJS 1 和 Vue 1</li>
+<li>实现 Virtual DOM 的 React 和 Preact</li>
+<li>实现单向数据流（FLUX）思想的 Redux</li>
+<li>实现 Reactive 思想的 Rx.js</li>
+<li>实现 Rails 思想的 Ember.js</li>
+<li>实现函数式思想的 Ramda</li>
+</ul>
+<h2 id="组件原则"><a href="#组件原则" class="headerlink" title="组件原则"></a>组件原则</h2><h3 id="（内部）分层原则：正交原则"><a href="#（内部）分层原则：正交原则" class="headerlink" title="（内部）分层原则：正交原则"></a>（内部）分层原则：正交原则</h3><ul>
+<li>HTML、CSS、JS分离原则，彼此之间互相不影响，改变自身不会影响其他<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不推荐 </span></span><br><span class="line">$div.show();</span><br><span class="line"><span class="comment">// 推荐</span></span><br><span class="line">$div.addClass(<span class="string">'active'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###（对外）封装原则：面向接口编程</p>
+<ul>
+<li>一开始不要想细节</li>
+<li>优先思考组件会被如何调用<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 总结：面向对象new的形式 Diolog，传入内容，返回的对象至少有属性open，close等</span></span><br><span class="line"><span class="comment">// 文档、demo</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明一个diolog</span></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> diolog = <span class="keyword">new</span> Diolog(&#123;</span><br><span class="line">    content:<span class="string">'hello'</span>,</span><br><span class="line">    title:<span class="string">'提示'</span>,</span><br><span class="line">    buttons:&#123;</span><br><span class="line">      ok:&#123;<span class="attr">text</span>:<span class="string">'确定'</span>,<span class="attr">action</span>:<span class="string">'fn'</span>&#125;,</span><br><span class="line">      cancle:&#123;<span class="attr">text</span>:<span class="string">'取消'</span>,<span class="attr">action</span>:<span class="string">'fn2'</span>&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用diolog的show或者open等</span></span><br><span class="line">diolog.show();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h3><p>网格/栅栏系统：给页面分块</p>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/blog/blog/tags#git" >
-    <span class="tag-code">git</span>
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
   </a>
 
       </div>
@@ -188,20 +223,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/js——对值传递的一点理解/">
+      <a class="nav-left" href="/blog/2018/05/29/flex/">
         <span class="nav-arrow">← </span>
         
-          关于js值传递的一点理解
+          flex
         
       </a>
     
-    
-      <a class="nav-right" href="/blog/2018/04/18/html基础/">
-        
-          html基础
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -248,7 +276,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#常用命令行"><span class="toc-nav-text">常用命令行</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git备忘"><span class="toc-nav-text">git备忘</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#轮子"><span class="toc-nav-text">轮子</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#组件原则"><span class="toc-nav-text">组件原则</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#（内部）分层原则：正交原则"><span class="toc-nav-text">（内部）分层原则：正交原则</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#bootstrap"><span class="toc-nav-text">bootstrap</span></a></li></ol>
     
   </div>
 </aside>
@@ -258,7 +286,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/18/git/';
+    var url = 'https://sofiaying.github.io/blog/2018/05/31/组件/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -314,7 +342,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "常用命令行及git备忘",
+        id: "组件",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
