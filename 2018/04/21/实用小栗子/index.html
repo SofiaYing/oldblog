@@ -156,7 +156,8 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> 多行呢？建议不会的时候查英文 <span class="selector-tag">--</span>&gt;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>:-webkit-box;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>:<span class="number">2</span>;</span><br><span class="line">  <span class="comment">/* 显示2行 */</span></span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>:vertical;</span><br><span class="line">  <span class="attribute">overflow</span>:hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>:ellipsis;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div id="paddingTop"><h3>一比一的div</h3></div>
 
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> 宽度自适应，高度为0，用<span class="selector-tag">padding-top</span>撑起高度，不写<span class="selector-tag">height</span> <span class="selector-tag">--</span>&gt;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">  <span class="attribute">padding-top</span>:<span class="number">100%</span>;<span class="comment">/*宽度的100%*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="selector-tag">--</span> 宽度自适应，高度为0，用<span class="selector-tag">padding-top</span>撑起高度，不写<span class="selector-tag">height</span> <span class="selector-tag">--</span>&gt;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">  <span class="attribute">padding-top</span>:<span class="number">100%</span>;<span class="comment">/*宽度的100%*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入框圆角去阴影，聚焦去篮框，聚焦样式"><a href="#输入框圆角去阴影，聚焦去篮框，聚焦样式" class="headerlink" title="输入框圆角去阴影，聚焦去篮框，聚焦样式"></a>输入框圆角去阴影，聚焦去篮框，聚焦样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.input</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#dbdbdb</span>;<span class="comment">/* 设置圆角时可去除阴影 */</span></span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">  <span class="attribute">outline</span>: none;<span class="comment">/* 可去除聚焦时的外边框 */</span></span><br><span class="line">  <span class="attribute">cursor</span>: default;<span class="comment">/* 聚焦变成箭头，pointer是变成手 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></section>
     <!-- Tags START -->
     
       <div class="tags">
@@ -178,17 +179,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/20/HTTP/">
+      <a class="nav-left" href="/blog/2018/04/21/markdown语法备忘/">
         <span class="nav-arrow">← </span>
         
-          HTTP
+          markdown语法备忘
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/21/markdown语法备忘/">
+      <a class="nav-right" href="/blog/2018/04/23/居中/">
         
-          markdown语法备忘
+          CSS——居中
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -238,7 +239,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#水平菜单"><span class="toc-nav-text">水平菜单</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#分开的多行文字两端对齐"><span class="toc-nav-text">分开的多行文字两端对齐</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#单行文字溢出省略"><span class="toc-nav-text">单行文字溢出省略</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-text">一比一的div</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#水平菜单"><span class="toc-nav-text">水平菜单</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#分开的多行文字两端对齐"><span class="toc-nav-text">分开的多行文字两端对齐</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#单行文字溢出省略"><span class="toc-nav-text">单行文字溢出省略</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-text">一比一的div</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#输入框圆角去阴影，聚焦去篮框，聚焦样式"><span class="toc-nav-text">输入框圆角去阴影，聚焦去篮框，聚焦样式</span></a></li></ol>
     
   </div>
 </aside>

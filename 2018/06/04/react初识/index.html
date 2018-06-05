@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="yanm1ng&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/blog/css/images/read.png">
+  
+  <title>
+    
+      react初识 | Sofia&#39;s Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/css/style.css">
+<link rel="stylesheet" href="/blog/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/blog/js/qrious.js"></script>
+<script src="/blog/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <!-- <img src="/css/images/logo.png" /> -->
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/blog/">
+      <div class="logo"></div>
+      <span>Sofia's Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="http://sofiaying.github.io/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/" class="item-link">Article</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/blog/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="http://sofiaying.github.io/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/" class="menu-link">Article</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/blog/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>react初识</h2>
+  <p class="post-date">2018-06-04</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><ol>
+<li>安装:npx create-react-app my-app-name</li>
+<li>部署到GitHub<ul>
+<li>.gitignore 被 create-react-app 改掉了，需删除 .gitignore 里面的 /build 这一行。</li>
+<li>在 package.json 里添加”homepage”:”https://预览地址/build”<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>推荐在React中使用这种语法来描述UI信息。</li>
+<li>是一种融合了 XML 和 JS 的语法。</li>
+<li>可以用花括号{}把任意的JavaScript表达式嵌入到JSX中。</li>
+<li>编译之后，JSX 表达式就变成了常规的 JavaScript 对象。这意味着你可以在 if 语句或者是 for 循环中使用 JSX，用它给变量赋值，当做参数接收，或者作为函数的返回值。</li>
+<li>比起 HTML ， JSX 更接近于 JavaScript ，所以 React DOM 使用驼峰(camelCase)属性命名约定, 而不是HTML属性名称。例如，class 在JSX中变为className，tabindex 变为 tabIndex。</li>
+<li>JSX 防止注入攻击,在JSX中嵌入用户输入是安全的。<br>默认情况下，在渲染之前, React DOM 会格式化(escapes) JSX中的所有值.从而保证用户无法注入任何应用之外的代码。在被渲染之前，所有的数据都被转义成为了字符串处理。以避免 XSS(跨站脚本) 攻击。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatName</span>(<span class="params">user</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> user.firstName + <span class="string">''</span> + user.lastName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> user = &#123;<span class="attr">firstName</span>:<span class="string">'zhang'</span>,<span class="attr">lastName</span>:<span class="string">'waiwai'</span>&#125;;</span><br><span class="line"><span class="comment">//使用双引号来指定字符串字面量作为属性值</span></span><br><span class="line"><span class="comment">//用花括号嵌入一个 JavaScript 表达式作为属性值</span></span><br><span class="line"><span class="comment">//两者不能同时用于同一属性</span></span><br><span class="line"><span class="keyword">const</span> element = <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&#123;user.id&#125;</span> <span class="attr">className</span>=<span class="string">'user'</span>&gt;</span>Hello,&#123;formatName(user)&#125;!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span>;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  <span class="comment">// ReactDOM.render(e1, e2) 的作用：将 e1 插入到 e2 中。只不过 e1 虽然在 JS 文件中，却可以使用 HTML 的语法（这就是 JSX 语法）。</span></span><br><span class="line">  element,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h3><ul>
+<li>ReactDOM.render()</li>
+<li>React 元素是 不可突变（immutable）的. 一旦你创建了一个元素, 就不能再修改其子元素或任何属性。一个元素就像电影里的一帧: 它表示在某一特定时间点的UI。更新UI的唯一方法是创建一个新的元素, 并将其传入 ReactDOM.render()方法.</li>
+<li>React 只更新必需要更新的部分。React DOM 会将元素及其子元素与之前版本逐一对比, 并只对有必要更新的 DOM 进行更新, 以达到 DOM 所需的状态。关注每个时间点UI的表现, 而不是关注随着时间不断更新UI的状态, 可以减少很多奇怪的 bug 。<h3 id="Components-and-Props"><a href="#Components-and-Props" class="headerlink" title="Components and Props"></a>Components and Props</h3><code>component</code></li>
+<li>组件就像JavaScript的函数。组件可以接收任意输入(称为”props”)， 并返回 React 元素，用以描述屏幕显示内容。</li>
+<li>新的 React apps 都有一个单独的顶层 App 组件。然而，如果你在已有的应用中整合 React，你可以需要由下至上地, 从类似于 Button 这样的小组件开始, 逐渐整合到视图层的顶层。</li>
+<li>不要害怕把一个组件分为多个更小的组件,最好的做法是使其成为可复用组件.<br><code>props</code></li>
+<li>只读</li>
+<li>所有React组件都必须是纯函数(不会试图改变它们的输入，并且对于同样的输入,始终可以得到相同的结果)，并禁止修改其自身props 。</li>
+<li>state 允许 React 组件在不违反上述规则的情况下, 根据用户操作, 网络响应, 或者其他随便什么东西, 来动态地改变其输出。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatDate</span>(<span class="params">date</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> date.toLocaleDateString();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Avatar 组件不用关心它在 Comment 中是如何渲染的。这是为什么我们它的 prop 一个更通用的属性名: user, 而不是 author 的原因。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Avatar</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;img className=<span class="string">"Avatar"</span></span><br><span class="line">         src=&#123;props.user.avatarUrl&#125;</span><br><span class="line">         alt=&#123;props.user.name&#125; /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UserInfo</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"UserInfo"</span>&gt;</span><br><span class="line">      &lt;Avatar user=&#123;props.user&#125; /&gt;</span><br><span class="line">      &lt;div className=<span class="string">"UserInfo-name"</span>&gt;</span><br><span class="line">        &#123;props.user.name&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Comment</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"Comment"</span>&gt;</span><br><span class="line">      &lt;UserInfo user=&#123;props.author&#125; /&gt;</span><br><span class="line">      &lt;div className=<span class="string">"Comment-text"</span>&gt;</span><br><span class="line">        &#123;props.text&#125;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div className="Comment-date"&gt;</span></span><br><span class="line"><span class="regexp">        &#123;formatDate(props.date)&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const comment = &#123;</span></span><br><span class="line"><span class="regexp">  date: new Date(),</span></span><br><span class="line"><span class="regexp">  text: 'I hope you enjoy learning React!',</span></span><br><span class="line"><span class="regexp">  author: &#123;</span></span><br><span class="line"><span class="regexp">    name: 'Hello Kitty',</span></span><br><span class="line"><span class="regexp">    avatarUrl: 'http:/</span><span class="regexp">/placekitten.com/g</span><span class="regexp">/64/</span><span class="number">64</span><span class="string">'</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string">ReactDOM.render(</span></span><br><span class="line"><span class="string">  &lt;Comment</span></span><br><span class="line"><span class="string">    date=&#123;comment.date&#125;</span></span><br><span class="line"><span class="string">    text=&#123;comment.text&#125;</span></span><br><span class="line"><span class="string">    author=&#123;comment.author&#125; /&gt;,</span></span><br><span class="line"><span class="string">  document.getElementById('</span>root<span class="string">')</span></span><br><span class="line"><span class="string">);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="state和生命周期"><a href="#state和生命周期" class="headerlink" title="state和生命周期"></a>state和生命周期</h3><p><code>函数组件</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clock</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">      &lt;h2&gt;It is &#123;props.date.toLocaleTimeString()&#125;.&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    &lt;Clock date=&#123;<span class="keyword">new</span> <span class="built_in">Date</span>()&#125; /&gt;,</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure></p>
+<p><code>类组件</code></p>
+<ul>
+<li>类允许我们在其中添加本地状态(state)和生命周期钩子。</li>
+</ul>
+<ol>
+<li>创建一个继承自 React.Component 类的 ES6 class 同名类。</li>
+<li>添加一个名为 render() 的空方法。</li>
+<li>把原函数中的所有内容移至 render() 中。</li>
+<li>在render()方法中使用 this.props 替代 props。</li>
+<li>删除保留的空函数声明。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Clock 设置定时器并每秒更新 UI ，事实上应该是 Clock 自身实现的一部分。</span></span><br><span class="line"><span class="comment">//添加 state 到 Clock 组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clock</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">//添加一个 类构造函数(class constructor) 初始化 this.state:</span></span><br><span class="line">+ construtor(props)&#123;</span><br><span class="line">+   <span class="keyword">super</span>(props);  <span class="comment">//类组件应始终使用 props 调用基础构造函数。</span></span><br><span class="line">+   <span class="keyword">this</span>.state = &#123;<span class="attr">date</span> : <span class="keyword">new</span> <span class="built_in">Date</span>()&#125; </span><br><span class="line">+ &#125;</span><br><span class="line"> </span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="comment">//替换 render() 方法中的 this.props.date 为 this.state.date</span></span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;Hello, world!<span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">-       <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>It is &#123;this.props.date.toLocaleTimeString()&#125;.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">+       <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>It is &#123;this.state.date.toLocaleTimeString()&#125;.<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function tick() &#123;</span></span><br><span class="line"><span class="regexp">  ReactDOM.render(</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/移除 &lt;Clock /</span>&gt; 元素中的 date 属性：</span><br><span class="line">-   <span class="xml"><span class="tag">&lt;<span class="name">Clock</span> <span class="attr">date</span>=<span class="string">&#123;new</span> <span class="attr">Date</span>()&#125; /&gt;</span>,</span></span><br><span class="line"><span class="xml">+   <span class="tag">&lt;<span class="name">Clock</span> /&gt;</span></span></span><br><span class="line"><span class="xml">    document.getElementById('root')</span></span><br><span class="line"><span class="xml">  );</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">setInterval(tick, 1000);</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/blog/blog/tags#react" >
+    <span class="tag-code">react</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/blog/2018/06/01/webpack初识/">
+        <span class="nav-arrow">← </span>
+        
+          webpack初识
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/2018/06/05/react/">
+        
+          (untitled)
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    <!-- 
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+     -->
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    <!-- 
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+     -->
+    <!-- 二维码 END -->
+    
+    <!--  -->
+      <!-- Gitment START -->
+      <!-- <div id="comments"></div> -->
+      <!-- Gitment END -->
+    <!--  -->
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  <!-- 
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#开始"><span class="toc-nav-text">开始</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#入门"><span class="toc-nav-text">入门</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JSX"><span class="toc-nav-text">JSX</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#渲染"><span class="toc-nav-text">渲染</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Components-and-Props"><span class="toc-nav-text">Components and Props</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#state和生命周期"><span class="toc-nav-text">state和生命周期</span></a></li></ol></li></ol>
+    
+  </div>
+</aside>
+   -->
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'https://sofiaying.github.io/blog/2018/06/04/react初识/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })}
+     else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "react初识",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/blog/js/script.js"></script>
+  </body>
+</html>

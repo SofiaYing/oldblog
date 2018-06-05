@@ -10,7 +10,7 @@
   
   <title>
     
-      数组 | Sofia&#39;s Blog
+      webpack初识 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>数组</h2>
-  <p class="post-date">2018-04-20</p>
+  <h2>webpack初识</h2>
+  <p class="post-date">2018-06-01</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,15 +147,39 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>###<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">array.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;); <span class="comment">//&gt;0,a大，&lt;0,a小</span></span><br><span class="line">array.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h3><ul>
-<li>只针对Object,Array这种复杂对象。</li>
-<li>简单来说，浅拷贝只复制一层对象的属性，拷贝后会指向同一块内存地址。而深拷贝则递归复制了所有层级。</li>
-<li>需要注意的是，如果对象比较大，层级也比较多，深复制会带来性能上的问题。在遇到需要采用深复制的场景时，可以考虑有没有其他替代的方案。在实际的应用场景中，也是浅复制更为常用。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一个deepcopy的方法</span></span><br><span class="line"><span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj))</span><br></pre></td></tr></table></figure>
+    <section class="markdown-content"><ol>
+<li>概念：本质上，webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。</li>
+<li><p>Loader:Loader 就像是一个翻译员，能把源文件经过转化后输出新的结果，并且一个文件还可以链式的经过多个翻译员翻译。一个 Loader 的职责是单一的，只需要完成一种转换。如果一个源文件需要经历多步转换才能正常使用，就通过多个 Loader 去转换。在调用多个 Loader 去转换一个文件时，每个 Loader 会链式的顺序执行，第一个 Loader 将会拿到需处理的原内容，上一个 Loader 处理后的结果会传给下一个接着处理，最后的 Loader 将处理后的最终结果返回给 Webpack。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// 增加对 SCSS 文件的支持</span></span><br><span class="line">        test: <span class="regexp">/\.scss/</span>,</span><br><span class="line">        <span class="comment">// SCSS 文件的处理顺序为先 sass-loader 再 css-loader 再 style-loader</span></span><br><span class="line">        use: [</span><br><span class="line">          <span class="string">'style-loader'</span>,</span><br><span class="line">          &#123;</span><br><span class="line">            loader:<span class="string">'css-loader'</span>,</span><br><span class="line">            <span class="comment">// 给 css-loader 传入配置项</span></span><br><span class="line">            options:&#123;</span><br><span class="line">              minimize:<span class="literal">true</span>, </span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">'sass-loader'</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HtmlWebpackPlugin</p>
+</li>
+</ol>
+<ul>
+<li>如果我们更改了我们的一个入口起点的名称，甚至添加了一个新的名称，生成的包将被重命名在一个构建中，但是我们的index.html文件仍然会引用旧的名字。</li>
+<li>我们用 HtmlWebpackPlugin 来解决这个问题。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev html-webpack-plugin</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line">+ <span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">      app: <span class="string">'./src/index.js'</span>,</span><br><span class="line">      print: <span class="string">'./src/print.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">+   plugins: [</span><br><span class="line">+     <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">+       title: <span class="string">'Output Management'</span></span><br><span class="line">+       template: <span class="string">'./src/index.html'</span>,  <span class="comment">//自定义模板</span></span><br><span class="line">+       inject:<span class="string">'body'</span>   <span class="comment">//帮忙将相应的js插入到body中</span></span><br><span class="line">+     &#125;)</span><br><span class="line">+   ],</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: <span class="string">'[name].bundle.js'</span>,</span><br><span class="line">      path: path.resolve(__dirname, <span class="string">'dist'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>ExtractTextWebpackPlugin</li>
+</ol>
+<ul>
+<li>它会将所有的入口 chunk(entry chunks)中引用的 *.css，移动到独立分离的 CSS 文件。因此，你的样式将不再内嵌到 JS bundle 中，而是会放到一个单独的 CSS 文件（即 styles.css）当中。 如果你的样式文件大小较大，这会做更快提前加载，因为 CSS bundle 会跟 JS bundle 并行加载。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//npm install --save-dev extract-text-webpack-plugin</span></span><br><span class="line"><span class="comment">//直接下载会因版本问题报错，用以下办法可以解决</span></span><br><span class="line">npm install --save-dev extract-text-webpack-plugin@next</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          fallback: <span class="string">"style-loader"</span>,</span><br><span class="line">          use: <span class="string">"css-loader"</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"styles.css"</span>),</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </section>
     <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/blog/blog/tags#webpack" >
+    <span class="tag-code">webpack</span>
+  </a>
+
+      </div>
     
     <!-- Tags END -->
     <!-- NAV START -->
@@ -163,17 +187,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/js——闭包/">
+      <a class="nav-left" href="/blog/2018/05/31/组件/">
         <span class="nav-arrow">← </span>
         
-          js闭包
+          组件
         
       </a>
     
     
-      <a class="nav-right" href="/blog/2018/04/20/HTTP/">
+      <a class="nav-right" href="/blog/2018/06/04/react初识/">
         
-          HTTP
+          react初识
         
         <span class="nav-arrow"> →</span>
       </a>
@@ -223,7 +247,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#深拷贝和浅拷贝"><span class="toc-nav-text">深拷贝和浅拷贝</span></a></li></ol>
+      <ol class="nav">none</ol>
     
   </div>
 </aside>
@@ -233,7 +257,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/20/数组/';
+    var url = 'https://sofiaying.github.io/blog/2018/06/01/webpack初识/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -289,7 +313,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "数组",
+        id: "webpack初识",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {

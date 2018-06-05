@@ -138,167 +138,183 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
+  <h2></h2>
+  <p class="post-date">2018-06-05</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2018
-  </h1>
-  <div class="section-list">
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content">function Clock(props) {
+  return(
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {props.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+  ReactDOM.render(
+    element,
+    document.getElementById('root')
+  );
+}
+
+setInterval(tick, 1000);
+
+</section>
+    <!-- Tags START -->
     
+    <!-- Tags END -->
+    <!-- NAV START -->
     
-      <div class="section-list-item">
-        <a href="/blog/2018/06/05/react/" class="archive-title"></a>
-        <p class="archive-date">06-05</p>
-      </div>
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <div class="section-list-item">
-        <a href="/blog/2018/06/04/react初识/" class="archive-title">react初识</a>
-        <p class="archive-date">06-04</p>
-      </div>
+      <a class="nav-left" href="/blog/2018/06/04/react初识/">
+        <span class="nav-arrow">← </span>
+        
+          react初识
+        
+      </a>
     
-      <div class="section-list-item">
-        <a href="/blog/2018/06/01/webpack初识/" class="archive-title">webpack初识</a>
-        <p class="archive-date">06-01</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/05/31/组件/" class="archive-title">组件</a>
-        <p class="archive-date">05-31</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/05/29/flex/" class="archive-title">flex</a>
-        <p class="archive-date">05-29</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/05/28/CSS——icon/" class="archive-title">CSS——icon</a>
-        <p class="archive-date">05-28</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/05/18/CSS——层叠/" class="archive-title">CSS——层叠</a>
-        <p class="archive-date">05-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/05/14/响应式布局/" class="archive-title">响应式布局</a>
-        <p class="archive-date">05-14</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/27/js——函数/" class="archive-title">js——函数</a>
-        <p class="archive-date">04-27</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/23/AJAX基础/" class="archive-title">AJAX基础</a>
-        <p class="archive-date">04-23</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/23/CSS基础/" class="archive-title">CSS基础</a>
-        <p class="archive-date">04-23</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/23/居中/" class="archive-title">CSS——居中</a>
-        <p class="archive-date">04-23</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/21/实用小栗子/" class="archive-title">实用小栗子</a>
-        <p class="archive-date">04-21</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/21/markdown语法备忘/" class="archive-title">markdown语法备忘</a>
-        <p class="archive-date">04-21</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/20/HTTP/" class="archive-title">HTTP</a>
-        <p class="archive-date">04-20</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/20/数组/" class="archive-title">数组</a>
-        <p class="archive-date">04-20</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/js——面向对象（this，new，继承）/" class="archive-title">JS面向对象</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/js——闭包/" class="archive-title">js闭包</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/js——事件处理程序/" class="archive-title">JS事件处理程序</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/git/" class="archive-title">常用命令行及git备忘</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/ES6——Promise/" class="archive-title">Promise</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/布局相关——实用小栗子/" class="archive-title">实用小栗子</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/html基础/" class="archive-title">html基础</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/布局/" class="archive-title">CSS布局</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/js——对值传递的一点理解/" class="archive-title">关于js值传递的一点理解</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/CSS——选择器/" class="archive-title">CSS选择器</a>
-        <p class="archive-date">04-18</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/blog/2018/04/18/js基础——常用互动方法/" class="archive-title">BOM（Browser Object Mode）</a>
-        <p class="archive-date">04-18</p>
-      </div>
     
   </div>
-</section>
-  
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    <!-- 
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+     -->
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    <!-- 
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+     -->
+    <!-- 二维码 END -->
+    
+    <!--  -->
+      <!-- Gitment START -->
+      <!-- <div id="comments"></div> -->
+      <!-- Gitment END -->
+    <!--  -->
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  <!-- 
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-text">Hello, world!</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-text">It is {props.date.toLocaleTimeString()}.</span></a></li></ol></li></ol>
+    
+  </div>
+</aside>
+   -->
+  <!-- Catalog END -->
 </main>
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/tags/http/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'https://sofiaying.github.io/blog/2018/06/05/react/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })}
+     else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
