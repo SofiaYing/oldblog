@@ -10,7 +10,7 @@
   
   <title>
     
-      js-函数 | Sofia&#39;s Blog
+      seajs | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>js-函数</h2>
-  <p class="post-date">2018-04-27</p>
+  <h2>seajs</h2>
+  <p class="post-date">2018-06-15</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,17 +147,14 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匿名函数</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//fn存储的是匿名函数的地址</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2 = fn;  <span class="comment">// fn2和fn同时指向匿名函数的地址</span></span><br><span class="line">fn.name  <span class="comment">//fn  匿名函数默认的name跟给定的变量是一样的</span></span><br><span class="line">fn2.name  <span class="comment">//fn</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//具名函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>)</span>&#123;   <span class="comment">//fn3作用域为当前词法作用域</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">var</span> fn5 = <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>)</span>&#123;&#125;  <span class="comment">//fn4的作用域为fn4函数本身</span></span><br><span class="line"><span class="built_in">console</span>.log(fn3); <span class="comment">//ƒ fn3()&#123;return 3;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(fn4); <span class="comment">//fn4 is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//箭头函数</span></span><br><span class="line"><span class="keyword">var</span> fn6 = <span class="function"><span class="params">i</span> =&gt;</span> i+<span class="number">1</span>;  <span class="comment">//一个参数，一个表达式</span></span><br><span class="line"><span class="keyword">var</span> fn7 = <span class="function">(<span class="params">i,j</span>) =&gt;</span> i+j;  <span class="comment">//两个参数，一个表达式</span></span><br><span class="line"><span class="keyword">var</span> fn8 = <span class="function">(<span class="params">i,j</span>) =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="number">1</span>);<span class="keyword">return</span> i+j;&#125; <span class="comment">//两个表达式，要显示的return</span></span><br></pre></td></tr></table></figure>
-<h3 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> global =<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params">param1</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> value1 = <span class="string">'value1'</span>;</span><br><span class="line">  <span class="keyword">var</span> v = <span class="string">'v'</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">param2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">'inner v'</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(value1);   <span class="comment">//value1</span></span><br><span class="line">    <span class="built_in">console</span>.log(v);    <span class="comment">//inner v</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> v = <span class="string">'fn3 v'</span>;     </span><br><span class="line">    fn2(v);    <span class="comment">//value1 , inner v</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//词法作用域确定的是变量的关系，无法确定变量的值</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a);     </span><br><span class="line">&#125;</span><br><span class="line">a=<span class="number">2</span>;</span><br><span class="line">b(); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
-<h3 id="this-arguments"><a href="#this-arguments" class="headerlink" title="this/arguments"></a>this/arguments</h3></section>
+    <section class="markdown-content"><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//define 也可以接受两个以上参数。define(id, deps, factory?)</span></span><br><span class="line"><span class="comment">//字符串 id 表示模块标识，数组 deps 是模块依赖。</span></span><br><span class="line"><span class="comment">//factory 可以是一个函数，也可以是一个对象或字符串。factory 为对象、字符串时，表示模块的接口就是该对象、字符串。</span></span><br><span class="line"><span class="comment">//factory 为函数时，表示是模块的构造方法。执行该构造方法，可以得到模块向外提供的接口。</span></span><br><span class="line"><span class="comment">//factory 参数可以省略。省略时，表示声明依赖关系。</span></span><br><span class="line"><span class="comment">//在开发阶段，推荐不要手写 id 和 deps 参数，因为这两个参数可以在构建阶段通过工具自动生成。</span></span><br><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// require 是一个方法，接受 模块标识 作为唯一参数，用来获取其他模块提供的接口。</span></span><br><span class="line">  <span class="comment">// 获取模块 a 的接口</span></span><br><span class="line">  <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>);</span><br><span class="line">  <span class="comment">// 调用模块 a 的方法</span></span><br><span class="line">  a.doSomething();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//exports 是一个对象，用来向外提供模块接口。</span></span><br><span class="line">  <span class="comment">// 对外提供 foo 属性</span></span><br><span class="line">  exports.foo = <span class="string">'bar'</span>;</span><br><span class="line">  <span class="comment">// 对外提供 doSomething 方法</span></span><br><span class="line">  exports.doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//exports 参数是 module.exports 对象的一个引用。只通过 exports 参数来提供接口，有时无法满足开发者的所有需求。 比如当模块的接口是某个类的实例时，需要通过 module.exports 来实现</span></span><br><span class="line">  <span class="comment">// 错误用法！！!</span></span><br><span class="line">  exports = &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span>,</span><br><span class="line">    doSomething: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 正确写法</span></span><br><span class="line">  <span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span>,</span><br><span class="line">    doSomething: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/blog/blog/tags#js" >
-    <span class="tag-code">js</span>
+  <a href="/blog/blog/tags#seajs" >
+    <span class="tag-code">seajs</span>
   </a>
 
       </div>
@@ -168,20 +165,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/23/AJAX基础/">
+      <a class="nav-left" href="/blog/2018/06/04/react初识/">
         <span class="nav-arrow">← </span>
         
-          AJAX基础
+          react初识
         
       </a>
     
-    
-      <a class="nav-right" href="/blog/2018/05/14/响应式布局/">
-        
-          响应式布局
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -228,7 +218,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#函数"><span class="toc-nav-text">函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#词法作用域"><span class="toc-nav-text">词法作用域</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#this-arguments"><span class="toc-nav-text">this/arguments</span></a></li></ol>
+      <ol class="nav">none</ol>
     
   </div>
 </aside>
@@ -238,7 +228,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/27/js-函数/';
+    var url = 'https://sofiaying.github.io/blog/2018/06/15/seajs/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -294,7 +284,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "js-函数",
+        id: "seajs",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
