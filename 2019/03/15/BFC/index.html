@@ -10,7 +10,7 @@
   
   <title>
     
-      CSS选择器 | Sofia&#39;s Blog
+      CSS——BFC | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>CSS选择器</h2>
-  <p class="post-date">2018-04-18</p>
+  <h2>CSS——BFC</h2>
+  <p class="post-date">2019-03-15</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,18 +147,47 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>RunJS 演示代码<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"food"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        水果</span><br><span class="line">          <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            香蕉</span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        蔬菜</span><br><span class="line">          <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            白菜</span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>1、子选择器，即大于符号(&gt;),用于选择指定标签元素的<strong>第一代</strong>子元素(注意作用于第一代)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.food&gt;li&#123;</span><br><span class="line">  border: 1px red solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行结果如图<br><img src="https://user-images.githubusercontent.com/21055558/33794869-1acfa0c2-dd0f-11e7-96ab-93e9bf67934b.png" alt="image"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.all&gt;li&#123;</span><br><span class="line">  border: 1px red solid;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>运行结果如图<br><img src="https://user-images.githubusercontent.com/21055558/33794924-499321da-dd10-11e7-9651-36f229012110.png" alt="2017-12-09 6 32 39"><br>2、后代选择器，即加入空格，用于选择指定标签元素下的后辈元素。（注意作用于所有后代）<br>运行结果如图<br><img src="https://user-images.githubusercontent.com/21055558/33794922-3aacc7b6-dd10-11e7-9b15-c3e459659bd3.png" alt="2017-12-09 6 38 39"><br>3、通用选择器，使用一个*指定，作用是匹配html中所有标签元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;color：red;&#125;    /*任意标签元素字体设置为红色*/</span><br></pre></td></tr></table></figure></p>
+    <section class="markdown-content"><ul>
+<li>块级格式化上下文（block formatting context）</li>
+<li>块格式化上下文对于定位 (参见 float) 与清除浮动 (参见 clear) 很重要。浮动定位和清除浮动时只会应用于同一BFC的元素。外边距折叠也只会发生在属于同一BFC的块级元素之间。</li>
+<li>同一个块格式化上下文中的相邻块级盒之间的竖直margin会合并。（margin合并特性，跟BFC没什么关系）</li>
+<li>一个块格式化上下文包括创建它的元素内部所有内容，除了被包含于创建新的块级格式化上下文的后代元素内的元素。(即BFC爸爸管儿子，儿子如果也是BFC，爸爸不管孙子)</li>
+<li>任何情况下都可以不使用BFC（清除浮动、左右自适应布局、margin穿透父元素）</li>
+</ul>
+<p><strong>1.触发BFC条件</strong></p>
+<ul>
+<li>根元素或者包含它的元素</li>
+<li>float（除了none）</li>
+<li>overflow（除了visible）</li>
+<li>display（table-cell/table-caption/inline-block）(即不是block的block)</li>
+<li>position：absolute</li>
+<li>display: flow-root (可以创建无副作用的BFC)</li>
+</ul>
+<p><strong>2.BFC功能</strong></p>
+<ul>
+<li><p>BFC包裹内部元素：浮动元素（带来了清除浮动的效果，并不是真的清楚浮动，为了清除浮动可能带来副作用）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">display</span>: flow-root; <span class="comment">/*触发BFC*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">float</span>:left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>相邻BFC界限分明：用 float + div 做左右自适应布局（其实flex就能做）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid red;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span>&#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid green;</span><br><span class="line">  <span class="attribute">display</span>: flow-root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>3.margin穿透问题</strong></p>
+<ul>
+<li><p>当父元素没有border时，子元素margin穿透父元素，将父元素顶了下来，加上border之后，会解决穿透问题</p>
+</li>
+<li><p><code>注意：</code>虽然将父元素设置为BFC也能解决这一问题（BFC会包裹内部元素），但是会带来副作用，不推荐。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="comment">/* border: 10px solid red; */</span></span><br><span class="line">  <span class="attribute">background-color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/blog/blog/tags#css" >
-    <span class="tag-code">css</span>
+  <a href="/blog/blog/tags#CSS" >
+    <span class="tag-code">CSS</span>
   </a>
 
       </div>
@@ -169,20 +198,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/04/18/js——面向对象（this，new，继承）/">
+      <a class="nav-left" href="/blog/2018/06/15/seajs/">
         <span class="nav-arrow">← </span>
         
-          JS面向对象
+          seajs
         
       </a>
     
-    
-      <a class="nav-right" href="/blog/2018/04/18/布局相关——实用小栗子/">
-        
-          实用小栗子
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -239,7 +261,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2018/04/18/CSS——选择器/';
+    var url = 'https://sofiaying.github.io/blog/2019/03/15/BFC/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -295,7 +317,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "CSS选择器",
+        id: "CSS——BFC",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
