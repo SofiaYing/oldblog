@@ -160,9 +160,9 @@
 </li>
 </ul>
 <p>在函数调用过程中，调用方提供实参，这些实参可以是常量：Call(1);也可以是变量：Call(x);也可以是他们的组合：Call(2 * x + 1);也可以是对其它函数的调用：Call(GetNumber());但是所有这些实参的形式，都统称为表达式(Expression)。求值（Evaluation）即是指对这些表达式的简化并求解其值的过程。<br>求值策略(值传递和引用传递)的关注的点在于，这些表达式在调用函数的过程中，求值的时机、值的形式的选取等问题。求值的时机，可以是在函数调用前，也可以是在函数调用后，由被调用者自己求值。这些求值策略的划分依据是：求值的时机（调用前还是调用中）和值本身的传递方式。</p>
-<p><img src="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A51.png" alt="求值策略"></p>
+<p><img src="https://github.com/SofiaYing/images/blob/master/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A51.png" alt="求值策略"></p>
 <p>对于值传递，无论是值类型还是引用类型，都会在调用栈上创建一个副本，不同是，对于值类型而言，这个副本就是整个原始值的复制。而对于引用类型而言，由于引用类型的实例在堆中，在栈上只有它的一个引用（一般情况下是指针），其副本也只是这个引用的复制，而不是整个原始对象的复制。<br><img src="https://images2015.cnblogs.com/blog/428620/201601/428620-20160113172919038-753154977.png" alt=""><br>这便引出了值类型和引用类型（这不是在说值传递）的最大区别：值类型用做参数会被复制，但是很多人误以为这个区别是值类型的特性。其实这是值传递带来的效果，和值类型本身没有关系。只是最终结果是这样。</p>
-<p><img src="https://github.com/SofiaYing/Note/blob/master/images/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A52.png?raw=true" alt="求值策略区别"></p>
+<p><img src="https://github.com/SofiaYing/images/blob/master/%E6%B1%82%E5%80%BC%E7%AD%96%E7%95%A52.png" alt="求值策略区别"></p>
 <p>综上所述，对于JavaScript的函数调用方式最准确的描述是：参数藉由值传递方式，传递的值是个引用。（句中两个“值”不是一个意思，第一个值是evaluation result，第二个值是value content）由于这个描述太绕，对于Java，Python、Ruby、JavaScript等语言使用的这种求值策略，起了一个更贴切名字，叫Call by sharing。这个名字诞生于40年前。</p>
 <p>参考：<br>作者：Yolanda<br>链接：<a href="https://www.zhihu.com/question/31203609/answer/112157038" target="_blank" rel="noopener">https://www.zhihu.com/question/31203609/answer/112157038</a><br>来源：知乎</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function setName(obj)&#123;        //可以这么来理解, 函数有一个局部变量obj, 然后接收person做参数, 将person的值赋给了obj变量. 因为person仅仅是存储了一个引用, obj也仅仅是一个引用。那么到了这个时候, 就有两个引用指向了person指向的对象(person和obj)。</span><br><span class="line">  obj.name = &quot;Ni&quot;;            //obj = new Object();让obj变量又指向了一个新生成的对象, 此时指向person所指对象的引用就只有一个了, 至此函数和person所指对象的关系完全断开。</span><br><span class="line">  obj = new Object();         //此时对obj的操作, 跟person所指对象一点关系都没有, 只是在操作这个新生成的对象而已。实际上，当在函数内部重写obj时，这个变量引用的就是一个局部对象了，而这个对象在函数执行结束后, 就被垃圾回收了。</span><br><span class="line">  boj.name = &quot;Ge&quot;;</span><br><span class="line">&#125;</span><br><span class="line">var person = new Object();    //person是一个引用类型变量, 存储了一个指向某个对象的引用。person指向的对象才是一个复杂数据类型, 他包括了属性, 方法等一系列东西。</span><br><span class="line">setName(person);</span><br><span class="line">console.log(person.name);    //&quot;Ni&quot;</span><br></pre></td></tr></table></figure></section>
@@ -183,10 +183,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-    
-      <a class="nav-right" href="/blog/2018/04/18/html基础/">
+      <a class="nav-left" href="/blog/2018/04/18/布局相关——实用小栗子/">
+        <span class="nav-arrow">← </span>
         
-          html基础
+          实用小栗子
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/blog/2018/04/18/git/">
+        
+          常用命令行及git备忘
         
         <span class="nav-arrow"> →</span>
       </a>

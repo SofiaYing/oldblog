@@ -165,19 +165,15 @@
 </ul>
 <p><strong>2.BFC功能</strong></p>
 <ul>
-<li><p>BFC包裹内部元素：浮动元素（带来了清除浮动的效果，并不是真的清楚浮动，为了清除浮动可能带来副作用）</p>
+<li><p><strong>BFC包裹内部元素</strong>：浮动元素（带来了清除浮动的效果，并不是真的清楚浮动，为了清除浮动可能带来副作用）</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">display</span>: flow-root; <span class="comment">/*触发BFC*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">float</span>:left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>相邻BFC界限分明：用 float + div 做左右自适应布局（其实flex就能做）</p>
+<li><p><strong>相邻BFC界限分明</strong>：用 float + div 做左右自适应布局（其实flex就能做）</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid red;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span>&#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid green;</span><br><span class="line">  <span class="attribute">display</span>: flow-root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p><strong>3.margin穿透问题</strong></p>
-<ul>
-<li><p>当父元素没有border时，子元素margin穿透父元素，将父元素顶了下来，加上border之后，会解决穿透问题</p>
-</li>
-<li><p><code>注意：</code>虽然将父元素设置为BFC也能解决这一问题（BFC会包裹内部元素），但是会带来副作用，不推荐。</p>
+<li><p>BFC包裹内部元素：父子margin合并问题(当父元素垂直方向没有能挡住子元素的margin时，子元素margin和父元素的margin合并，加上border之后)</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="comment">/* border: 10px solid red; */</span></span><br><span class="line">  <span class="attribute">background-color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <code>注意：</code>虽然将父元素设置为BFC也能解决这一问题（BFC会包裹内部元素），但是会带来副作用，不推荐。</p>
 </li>
 </ul>
 </section>
@@ -261,7 +257,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2019/03/15/BFC/';
+    var url = 'https://sofiaying.github.io/blog/2019/03/15/CSS——BFC/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
