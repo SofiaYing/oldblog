@@ -10,7 +10,7 @@
   
   <title>
     
-      CSS——BFC | Sofia&#39;s Blog
+      js——原型/原型链 | Sofia&#39;s Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -138,8 +138,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>CSS——BFC</h2>
-  <p class="post-date">2019-03-15</p>
+  <h2>js——原型/原型链</h2>
+  <p class="post-date">2019-03-25</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -147,48 +147,27 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><ul>
-<li>块级格式化上下文（block formatting context）</li>
-<li>块格式化上下文对于定位 (参见 float) 与清除浮动 (参见 clear) 很重要。浮动定位和清除浮动时只会应用于同一BFC的元素。外边距折叠也只会发生在属于同一BFC的块级元素之间。</li>
-<li>同一个块格式化上下文中的相邻块级盒之间的竖直margin会合并。（margin合并特性，跟BFC没什么关系）</li>
-<li>一个块格式化上下文包括创建它的元素内部所有内容，除了被包含于创建新的块级格式化上下文的后代元素内的元素。(即BFC爸爸管儿子，儿子如果也是BFC，爸爸不管孙子)</li>
-<li>任何情况下都可以不使用BFC（清除浮动、左右自适应布局、margin穿透父元素）</li>
-</ul>
-<p><strong>1.触发BFC条件</strong></p>
-<ul>
-<li>根元素或者包含它的元素</li>
-<li>float（除了none）</li>
-<li>overflow（除了visible）</li>
-<li>display（table-cell/table-caption/inline-block）(即不是block的block)</li>
-<li>position：absolute</li>
-<li>display: flow-root (可以创建无副作用的BFC)</li>
-</ul>
-<p><strong>2.BFC功能</strong></p>
-<ul>
-<li><strong>BFC包裹内部元素</strong>：浮动元素（带来了清除浮动的效果，并不是真的清楚浮动，为了清除浮动可能带来副作用）<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">10px</span> solid red;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">display</span>: flow-root; <span class="comment">/*触发BFC*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">float</span>:left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <section class="markdown-content"><h2 id="原型与原型链"><a href="#原型与原型链" class="headerlink" title="原型与原型链"></a>原型与原型链</h2><ul>
+<li>原型链：最开始发明的原因是为了节省内存, <strong> proto </strong>指向一个原型，通过逐级向上查找直至 Object 的原型为止（是原型链查询中实际用到的，它总是指向 prototype）。</li>
+<li>原型：prototype （在定义构造函数时自动创建，它总是被 <strong>proto</strong> 所指）<br><code>注意：</code>开发时不要直接用<strong>proto</strong>这个属性，性能十分低<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">name</span>:<span class="string">'YY'</span>&#125;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;<span class="string">'age'</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="built_in">console</span>.dir(obj1)  <span class="comment">//打印所有属性及属性值</span></span><br><span class="line"><span class="comment">//name:"YY"</span></span><br><span class="line"><span class="comment">//__proto__:（存储一个地址，指向它(继承)的(原型prototype)共有属性）</span></span><br><span class="line"><span class="comment">//  constructor:</span></span><br><span class="line"><span class="comment">//  toString:(常用)</span></span><br><span class="line"><span class="comment">//  valueOf:(常用)</span></span><br><span class="line"><span class="comment">//  ...</span></span><br><span class="line"></span><br><span class="line">obj1.__proto__ === obj2.__proto__  <span class="comment">//ture</span></span><br><span class="line"><span class="comment">//注意：开发时不要直接用__proto__这个属性，性能十分低</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="https://github.com/SofiaYing/images/blob/master/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8.jpeg?raw=true" alt=""></p>
-<ul>
-<li><strong>相邻BFC界限分明</strong>：用 float + div 做左右自适应布局（其实flex就能做）<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid red;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span>&#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">5px</span> solid green;</span><br><span class="line">  <span class="attribute">display</span>: flow-root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>prototype是函数的原型对象，即 prototype是一个对象，它会被对应的 <strong> proto </strong>引用。</li>
+<li>要知道自己的 <strong> proto </strong>引用了哪个 prototype，只需要看看是哪个构造函数构造了你，那你的 <strong> proto </strong>就是那个构造函数的 prototype。</li>
+<li>(理解成为第一句和第二句话的一个例外)<br>所有的构造函数的原型链最后都会引用 Object构造函数的原型，即可以理解 Object构造函数的原型是所有原型链的最底层，即 Object.prototype.<strong> proto </strong>=== null<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span> (<span class="params">y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.y = y</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Foo(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//注意</span></span><br><span class="line">b.__proto__ === Foo.prototype</span><br><span class="line">b.__proto__.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">//因为b.__proto__ === Foo.prototype，而prototype是一个对象</span></span><br><span class="line">Foo.__protp__ === <span class="built_in">Function</span>.prototype</span><br><span class="line"><span class="built_in">Function</span>.prototype === <span class="built_in">Object</span>.prototype</span><br><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<p><img src="https://github.com/SofiaYing/images/blob/master/%E5%B7%A6%E5%9B%BA%E5%AE%9A%E5%8F%B3%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80.jpeg?raw=true" alt=""></p>
-<ul>
-<li><p>BFC包裹内部元素：父子margin合并问题(当父元素垂直方向没有能挡住子元素的margin时，子元素margin和父元素的margin合并，加上border之后)</p>
-<p>  <code>注意：</code> 虽然将父元素设置为BFC也能解决这一问题（BFC会包裹内部元素），但是会带来副作用，不推荐。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">  <span class="comment">/* border: 10px solid red; */</span></span><br><span class="line">  <span class="attribute">background-color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.son</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: green;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>:<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/SofiaYing/images/blob/master/%E7%88%B6%E5%AD%90margin%E5%90%88%E5%B9%B6.jpeg?raw=true" alt=""></p>
+</ol>
+<p><img src="https://raw.githubusercontent.com/SofiaYing/images/master/%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%A4%BA%E4%BE%8B.png" alt="示例图"></p>
+<p>参考文献：<br><a href="https://juejin.im/entry/5883672c570c350062be16e5" target="_blank" rel="noopener">JavaScript 原型链</a></p>
 </section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/blog/blog/tags#CSS" >
-    <span class="tag-code">CSS</span>
+  <a href="/blog/blog/tags#js" >
+    <span class="tag-code">js</span>
   </a>
 
       </div>
@@ -199,20 +178,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/blog/2018/06/15/seajs/">
+      <a class="nav-left" href="/blog/2019/03/15/CSS——BFC/">
         <span class="nav-arrow">← </span>
         
-          seajs
+          CSS——BFC
         
       </a>
     
-    
-      <a class="nav-right" href="/blog/2019/03/25/js——原型-原型链/">
-        
-          js——原型/原型链
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -259,7 +231,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="nav">none</ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#原型与原型链"><span class="toc-nav-text">原型与原型链</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#总结"><span class="toc-nav-text">总结</span></a></li></ol></li></ol>
     
   </div>
 </aside>
@@ -269,7 +241,7 @@
 
 <script>
   (function () {
-    var url = 'https://sofiaying.github.io/blog/2019/03/15/CSS——BFC/';
+    var url = 'https://sofiaying.github.io/blog/2019/03/25/js——原型-原型链/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -325,7 +297,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "CSS——BFC",
+        id: "js——原型/原型链",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
